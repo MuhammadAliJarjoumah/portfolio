@@ -1,0 +1,34 @@
+<section class="section">
+    <div class="part-symbol">
+        <img [src]="sectionContent.symbol" alt="" class="symbol" *ngIf="sectionContent.symbol">
+        <h3 class="part-name">
+            {{sectionContent.name}}
+        </h3>
+    </div>
+    <h1 class="title">
+        {{sectionContent.title | titlecase}}
+    </h1>
+    <div class="parts" [ngStyle]="{'transform':'translateX(' + translateX + '%)'}">
+        <div class="part" *ngFor="let part of sectionContent.slides;let i =index" [ngClass]="{'clicked-part':part.isClicked,'not-clicked-part':!part.isClicked}">
+            <p class="description">
+                {{part.description}}
+            </p>
+            <img [src]="part.previewImage" alt="" class="preview-image" (click)="onClickImage(i)">
+        </div>
+    </div>
+    <div class="switching-part-conrols">
+        <div class="arrows">
+
+            <span class="arrow arrow-left" [ngClass]="{'disabled':isFirstPart}" (click)="onClickBack()">
+                <fa-icon icon="circle-arrow-left"></fa-icon>
+            </span>
+            <span class="arrow arrow-right" [ngClass]="{'disabled':isLastPart}" (click)="onClickNext()">
+                <fa-icon icon="circle-arrow-right"></fa-icon>
+            </span>
+        </div>
+        <div class="scroller">
+            <div class="scroll-line" *ngFor="let line of sectionContent.slides; let i = index" [ngClass]="{'clicked-line':line.isClicked}" (click)="onClickImage(i)"></div>
+        </div>
+    </div>
+
+</section>
