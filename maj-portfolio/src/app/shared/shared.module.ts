@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ImagesSliderComponent } from './images-slider/images-slider.component';
 import { ImagesModalViewerComponent } from './images-modal-viewer/images-modal-viewer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +13,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ImagesSliderComponent,
     ImagesModalViewerComponent,
     FontAwesomeModule,
+    PageNotFoundComponent,
   ],
   exports: [
     ImagesSliderComponent,
     ImagesModalViewerComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
+    PageNotFoundComponent,
   ]
 })
 export class SharedModule { }
