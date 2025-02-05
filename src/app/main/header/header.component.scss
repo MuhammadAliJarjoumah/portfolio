@@ -14,9 +14,9 @@ header {
 
 nav {
     display: grid;
-    grid-template-columns: 15rem calc(100% - 15rem - 4rem);
-    width: 100%;
+    grid-template-columns: 15rem calc(100% - 15rem - 10rem - 2rem) 10rem;
     padding: 0 2rem;
+    column-gap: 1rem;
     align-items: center;
 }
 
@@ -38,7 +38,7 @@ nav {
             color: colors.$primary-orange;
         }
 
-        &:hover{
+        &:hover {
             color: colors.$primary-orange;
         }
     }
@@ -51,3 +51,5 @@ nav {
 .top-position {
     height: 150px;
 }
+
+.theme-button {}

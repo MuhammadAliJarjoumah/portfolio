@@ -1,5 +1,5 @@
 <div class="app-container">
-    <app-header>
+    <app-header (themeChanged)="themeChanged($event)">
     </app-header>
     <router-outlet />
 </div>

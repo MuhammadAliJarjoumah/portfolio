@@ -1,17 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// @use '/theme-colors' as theme;
+@use '@angular/material'as mat;
 @use 'app/shared/variables'as colors;
-@use '../node_modules/@angular/material'as mat;
 @use 'app/responsive'as responsive;
 @use 'app/themes/light-theme.scss';
 @use 'app/themes/dark-theme.scss';
 @use 'app/themes/custom-themes.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+
 html {
-    color-scheme: light dark;
-    @include mat.theme((color: mat.$blue-palette,
-            typography: Roboto,
-            density: 0));
+    color-scheme: light;
+    @include mat.theme((color: mat.$azure-palette));
+}
+
+html.dark-mode {
+    color-scheme: dark;
+    @include mat.theme((color: mat.$violet-palette));
 }
 
 p {
@@ -26,8 +32,6 @@ body {
 }
 
 body {
-    background: var(--mat-sys-surface);
-    color: var(--mat-sys-on-surface);
     transition: all ease-in-out .2s;
 }
 
@@ -39,4 +43,14 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
     background: colors.$light-cyan;
     border-radius: .5rem;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

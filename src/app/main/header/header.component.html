@@ -1,4 +1,4 @@
-<header  [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}">
+<header [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}">
     <nav>
         <a routerLink="/" class="logo">Your Logo</a>
         <ol class="nav-links">
@@ -6,5 +6,21 @@
             <li><a routerLink="/projects">Projects</a></li>
             <li><a routerLink="/contact">Contact</a></li>
         </ol>
+        <span [ngSwitch]="Theme.DARK" (click)="toggleTheme()" class="theme-button">
+            <ng-container *ngSwitchCase="true">
+                <li>
+                    <mat-icon></mat-icon>
+                </li>
+            </ng-container>
+            <ng-container *ngSwitchCase="true">
+                <li *ngSwitchCase="false">
+                    <i class="fas fa-sun"></i>
+                </li>
+            </ng-container>
+        </span>
+        <!-- <span *ngIf="Theme.DARK; else light">
+                <i class="fas fa-moon" ></i>
+                <i class="fas fa-sun" ></i>
+            </span> -->
     </nav>
 </header>
