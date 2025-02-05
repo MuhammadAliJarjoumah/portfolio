@@ -1,0 +1,124 @@
+$base-font-size: 16px; 
+$font-size-scale-xs: 0.8;
+$font-size-scale-sm: 0.9;
+$font-size-scale-md: 1;
+$font-size-scale-lg: 1.1;
+$font-size-scale-xl: 1.2;
+
+$heading-sizes: (
+    h1: 3.5rem,
+    h2: 2.5rem,
+    h3: 2rem,
+    h4: 1.5rem,
+    h5: 1.25rem,
+    h6: 1rem
+);
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint=='xs' {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='sm' {
+        @media (min-width: 576px) and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='md' {
+        @media (min-width: 768px) and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='lg' {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='xl' {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint=='xs' {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='sm' {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='md' {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='lg' {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint=='xl' {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+
+body {
+    font-size: $base-font-size;
+
+    @include responsive(xs) {
+        font-size: $base-font-size * $font-size-scale-xs;
+    }
+
+    @include responsive(sm) {
+        font-size: $base-font-size * $font-size-scale-sm;
+    }
+
+    @include responsive(md) {
+        font-size: $base-font-size * $font-size-scale-md;
+    }
+
+    @include responsive(lg) {
+        font-size: $base-font-size * $font-size-scale-lg;
+    }
+
+    @include responsive(xl) {
+        font-size: $base-font-size * $font-size-scale-xl;
+    }
+}
+
+@each $heading, $size in $heading-sizes {
+    #{ $heading } {
+        @include responsive(xs) {
+            font-size: $size * $font-size-scale-xs;
+        }
+        @include responsive(sm) {
+            font-size: $size * $font-size-scale-sm;
+        }
+        @include responsive(md) {
+            font-size: $size * $font-size-scale-md;
+        }
+        @include responsive(lg) {
+            font-size: $size * $font-size-scale-lg;
+        }
+        @include responsive(xl) {
+            font-size: $size * $font-size-scale-xl;
+        }
+    }
+}

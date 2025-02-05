@@ -9,7 +9,12 @@ export const routes: Routes = [
         title: 'Home page',
     },
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
+    {
         path: '**',
-        component: PageNotFoundComponent,//This should be replaced with page not found component
+        component: PageNotFoundComponent,
     }
 ];

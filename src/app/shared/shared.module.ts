@@ -5,6 +5,7 @@ import { ImagesModalViewerComponent } from './images-modal-viewer/images-modal-v
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
+
 @NgModule({
   declarations: [
   ],

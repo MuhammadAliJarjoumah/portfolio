@@ -1,0 +1,23 @@
+@use '../../shared/variables.scss'as colors;
+
+.header {
+    background: colors.$federal-blue;
+    padding: 2rem;
+    box-shadow: 0 0 1rem rgba(colors.$honolulu-blue, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    height: 100vh;
+}
+
+.about {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .about-content {
+        flex: 1;
+    }
+}
