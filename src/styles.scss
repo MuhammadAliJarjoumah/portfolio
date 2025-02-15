@@ -11,13 +11,13 @@
 
 
 html {
-    color-scheme: light;
-    @include mat.theme((color: mat.$azure-palette));
+    // color-scheme: light;
+    // @include mat.theme((color: mat.$azure-palette));
 }
 
 html.dark-mode {
-    color-scheme: dark;
-    @include mat.theme((color: mat.$violet-palette));
+    // color-scheme: dark;
+    // @include mat.theme((color: mat.$violet-palette));
 }
 
 p {
@@ -29,28 +29,43 @@ body {
     padding: 0;
     box-sizing: content-box;
     font-family: 'Montserrat', sans-serif;
-}
-
-body {
+    color: colors.$lilac;
     transition: all ease-in-out .2s;
+    background: colors.$russian-violet;
 }
 
+fa-icon{
+    color: colors.$lilac;
+}
+
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+    border-radius: .5rem;
+    border: .1rem solid colors.$african-violet;
+    transition: all .15s cubic-bezier(.4, 0, .2, 1);
+    padding: 2rem;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        filter: drop-shadow(0 -11px -20px rgba(0, -20, -77, 30.04));
+        backdrop-filter: blur(7px);
+        background-color: rgba(159, 134, 192, 0.1);
+    }
+}
 
 html::-webkit-scrollbar {
     width: 10px;
 }
 
 html::-webkit-scrollbar-thumb {
-    background: colors.$light-cyan;
+    background: colors.$lilac;
     border-radius: .5rem;
 }
 
 html,
 body {
     height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
 }

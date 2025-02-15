@@ -1,23 +1,86 @@
 @use '../../shared/variables.scss'as colors;
+@use '../../responsive.scss'as responsive;
 
 header {
     height: 100px;
     display: grid;
     align-items: center;
-    background-color: rgba(colors.$primary-dark-blue, 0.85);
     width: 100%;
     transition: all 0.3s cubic-bezier(0.35, 0.11, 0, 0.95);
     position: fixed;
     backdrop-filter: blur(7px);
+    box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
+    z-index: 10;
 }
-
 
 nav {
     display: grid;
-    grid-template-columns: 15rem calc(100% - 15rem - 10rem - 2rem) 10rem;
+    grid-template-columns: auto auto;
     padding: 0 2rem;
     column-gap: 1rem;
     align-items: center;
+}
+
+.big-header {
+    display: none;
+}
+
+.small-header {
+    display: grid;
+    justify-content: flex-end;
+
+    mat-icon {
+        cursor: pointer;
+    }
+
+}
+
+mat-sidenav-container {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    // z-index: 10;
+}
+
+mat-drawer {
+    width: 15rem;
+    background-color: colors.$russian-violet;
+    z-index: 5;
+    text-align: center;
+    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.nav-list {
+    top: 10rem;
+    position: absolute;
+    width: 100%;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 10;
+}
+
+@include responsive.respond-to('md') {
+    .menu-icon {
+        display: none;
+    }
+
+    nav {
+        grid-template-columns: 15rem calc(100% - 15rem - 10rem - 2rem) 10rem;
+    }
+
+    .big-header {
+        display: block;
+    }
+
+    .small-header {
+        display: none;
+    }
+
 }
 
 .nav-links {
@@ -30,26 +93,42 @@ nav {
     li {
         counter-increment: my-awesome-counter;
         cursor: pointer;
-        color: colors.$primary-gray;
-        transition: all .2s ease-in-out;
+        transition: all .15s cubic-bezier(.4, 0, .2, 1);
+        ;
+        font-weight: 600;
+        padding: 1rem;
+        border-radius: .5rem;
+        border: .1rem solid transparent;
 
-        &::before {
-            content: "0"counter(my-awesome-counter) ". ";
-            color: colors.$primary-orange;
-        }
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                filter: drop-shadow(0 -11px -20px rgba(0, -20, -77, 30.04));
+                backdrop-filter: blur(7px);
+                background-color: rgba(159, 134, 192, 0.1);
 
-        &:hover {
-            color: colors.$primary-orange;
+            }
         }
+         &:active{
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            filter: drop-shadow(0 -11px -20px rgba(0, -20, -77, 30.04));
+            backdrop-filter: blur(7px);
+            border: solid .1rem colors.$lilac;
+         }
     }
 }
 
 .header-hidden {
     transform: translateY(-100%);
+    box-shadow: none;
+
 }
 
 .top-position {
-    height: 150px;
-}
+    height: 70px;
+    box-shadow: none;
 
-.theme-button {}
+    @include responsive.respond-to('lg'){
+        height: 150px;
+    }
+}

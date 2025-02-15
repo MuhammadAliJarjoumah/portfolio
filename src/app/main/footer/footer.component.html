@@ -1,0 +1,14 @@
+
+<section>
+    <h1>Get In Touch</h1>
+    <div class="contact-me">
+        @for ( contact of accounts; track $index){
+        <div class="contact-icon">
+            <a [href]="contact.url" target="_blank">
+                <fa-icon
+                    [icon]="[(contact.faIcon.iconPrefix ?  contact.faIcon.iconPrefix : 'fas'), contact.faIcon.iconName]"></fa-icon>
+            </a>
+        </div>
+        }
+    </div>
+</section>

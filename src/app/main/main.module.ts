@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { SharedModule } from '../shared/shared.module';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {
@@ -18,8 +21,16 @@ const routes: Routes = [
   declarations: [],
   imports: [
     HomeComponent,
+    HeaderComponent,
     CommonModule,
+    SharedModule,
+    FooterComponent,
     RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [
+    RouterModule,
+    HeaderComponent,
+    SharedModule,
+    FooterComponent
+  ]
 })
 export class MainModule { }

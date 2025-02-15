@@ -1,17 +1,77 @@
-<header class="header">
+<section class="header">
     <div class="header-content">
-        Hi, my name is
-        <h1 class="header-title"> Mohammad Ali Jarjoumah, a Frontend Developer</h1>
-        <p class="header-description">Welcome to my portfolio. I am a web developer and I love to create beautiful
-            websites, I want to be a Full Stack Web Developer.</p>
+        <div>
+            Hello, my name is
+            <h1 class="header-title">
+                Mohammad Ali Jarjoumah
+            </h1>
+            <h1 class="header-title">
+                I bring ideas to life online
+            </h1>
+            <p class="header-description">
+                I am a frontend software developer currently I’m focusing on becoming a full-stack software engineer.
+            </p>
+        </div>
+        <div class="buttons">
+            <button color="primary" routerLink="/about" mat-raised-button>
+                My Projects
+            </button>
+        </div>
     </div>
-</header> 
-<section class="about">
-    <div class="about-content">
-        <h1 class="about-title">About Me</h1>
-        <p class="about-description">I am a Frontend Developer, I have a passion for web development and love to create
-            beautiful websites. I am a self-taught developer and I have been learning web development for 2 years. I
-            have experience in HTML, CSS, JavaScript and Angular. I am always learning new things and I am
-            looking to become a Full Stack Web Developer.</p>
+</section>
+<section>
+    <h1 class="about-title">About Me</h1>
+    <div class="about-me-details">
+
+        <p class="about-description">Results-driven Angular developer translating complex requirements into efficient
+            code and exceptional user experiences. I thrive on challenging projects, finding innovative solutions to
+            optimize performance and deliver impactful results.<br>
+            <br>
+            I'm seeking a challenging and rewarding role where I can contribute to the development of innovative web
+            applications and further enhance my expertise in Angular and related technologies. I'm particularly
+            interested in opportunities to work on full-stack applications using.NET Core and cloud platforms like
+            AWS.<br>
+            <br>
+            I'm committed to staying at the forefront of Angular advancements, including exploring the latest features
+            in Angular 19 and beyond, and I'm also expanding my knowledge of .NET Core and .NET MAUI and
+            ASP.NET.<br><br> I'm eager to
+            contribute to a high-performing team and collaborate on challenging projects that push the boundaries of web
+            development
+        </p>
+        <div class="my-image">
+            <img src="images/profile-image.jpg" alt="Developer">
+        </div>
+    </div>
+</section>
+<section>
+    <h1>skills</h1>
+    <div class="skills-cards">
+        @for (skill of skills; track $index) {
+        <div class="skill-card">
+            <span>
+                @if (skill.faIcon) {
+                <fa-icon
+                    [icon]="[(skill.faIcon.iconPrefix ?  skill.faIcon.iconPrefix : 'fas'), skill.faIcon.iconName]"></fa-icon>
+                } @else {
+                <img src="{{skill.svgIcon}}">
+                }
+            </span>
+            <h6>{{skill.title}}</h6>
+            <!-- <p>{{skill.description}}</p> -->
+            <p class="level">{{skill.level}}</p>
+        </div>
+        }
+    </div>
+</section>
+<section>
+    <h1>Get In Touch</h1>
+    <div class="contact-me">
+        @for ( contact of myContacts; track $index){
+        <div class="contact-icon">
+            <a [href]="contact.url" target="_blank">
+                <fa-icon [icon]="[contact.faIcon.iconPrefix, contact.faIcon.iconName]"></fa-icon>
+            </a>
+        </div>
+        }
     </div>
 </section>

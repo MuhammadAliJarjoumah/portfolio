@@ -1,5 +1,5 @@
 {
-  "name": "maj-portfolio",
+  "name": "resume",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:maj-portfolio": "node dist/maj-portfolio/server/server.mjs"
+    "serve:ssr:Resume": "node dist/Resume/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,8 @@
     "@angular/ssr": "^19.0.7",
     "@fortawesome/angular-fontawesome": "^1.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@nguniversal/express-engine": "^7.0.2",
     "express": "^4.18.2",

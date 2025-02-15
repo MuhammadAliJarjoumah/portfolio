@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "maj-portfolio": {
+    "Resume": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/maj-portfolio",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "maj-portfolio:build:production"
+              "buildTarget": "Resume:build:production"
             },
             "development": {
-              "buildTarget": "maj-portfolio:build:development"
+              "buildTarget": "Resume:build:development"
             }
           },
           "defaultConfiguration": "development"

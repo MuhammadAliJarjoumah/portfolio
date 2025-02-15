@@ -1,21 +1,29 @@
-import { Component, HostListener, PLATFORM_ID, AfterViewInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './main/header/header.component';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { ThemeService } from './services/theme.service';
+import { MainModule } from './main/main.module';
 import { Theme } from './models/theme.model';
+import { ThemeService } from './services/theme.service';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, RouterOutlet],
+  imports: [MainModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  private readonly _ThemeService= inject(ThemeService);
+  private readonly _ThemeService = inject(ThemeService);
   title = 'Portfolio Mohammad Ali';
 
-  themeChanged(theme: Theme){
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far, fab);
+
+  }
+  themeChanged(theme: Theme) {
     this._ThemeService.setTheme(theme);
   }
 }
