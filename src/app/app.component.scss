@@ -1,0 +1,10 @@
+.app-container {
+    position: relative;
+    overflow: auto;
+}
+
+
+.menu-opened {
+    overflow: hidden !important;
+    /* Prevents scrolling */
+}

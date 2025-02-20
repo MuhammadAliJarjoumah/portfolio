@@ -1,0 +1,125 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+// @use '/theme-colors' as theme;
+// @use '@angular/material'as mat;
+@use 'app/shared/variables'as colors;
+@use 'app/responsive'as responsive;
+@use 'app/themes/light-theme.scss';
+@use 'app/themes/dark-theme.scss';
+@use 'app/themes/custom-themes.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+html {
+    // color-scheme: light;
+    // @include mat.theme((color: mat.$azure-palette));
+    scroll-behavior: smooth;
+}
+
+html.dark-mode {
+    // color-scheme: dark;
+    // @include mat.theme((color: mat.$violet-palette));
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Montserrat', sans-serif;
+    color: colors.$lilac;
+    transition: all ease-in-out .2s;
+    background: colors.$russian-violet;
+}
+
+fa-icon {
+    color: colors.$lilac;
+}
+
+
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+.mat-mdc-raised-button:not(:disabled),
+.mat-mdc-raised-button:disabled {
+    z-index: 1;
+    font-weight: 600;
+    border-radius: .5rem;
+    border: .1rem solid colors.$lilac;
+    transition: all .15s cubic-bezier(.4, 0, .2, 1);
+    padding: 2rem;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+    color: colors.$russian-violet;
+    background-color: colors.$lilac;
+
+    @media (hover:hover) {
+        &:hover {
+            background-color: colors.$russian-violet;
+            box-shadow: rgba($color: colors.$african-violet, $alpha: 1.0) 4px 4px 0;
+            transform: translate(-4px, -4px);
+        }
+    }
+
+    &:active {
+        background-color: colors.$russian-violet;
+        box-shadow: rgba($color: colors.$african-violet, $alpha: 1.0) 2px 2px 0 !important;
+        transform: translate(-2px, -2px);
+
+    }
+}
+
+.mat-mdc-raised-button:disabled {
+    color: colors.$russian-violet !important;
+    background-color: colors.$lilac !important;
+    opacity: .6;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        filter: drop-shadow(0 -11px -20px rgba(0, -20, -77, 30.04));
+        backdrop-filter: blur(7px);
+        background-color: rgba(159, 134, 192, 0.1);
+    }
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: colors.$lilac;
+    border-radius: .5rem;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+input,
+textarea {
+    color: white;
+    background-color: transparent;
+    border: .1rem solid colors.$lilac;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+a,
+a:visited {
+    color: colors.$lilac;
+    transition: all ease-in-out .2s;
+
+    @media (hover: hover) {
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+            opacity: 1;
+        }
+    }
+}

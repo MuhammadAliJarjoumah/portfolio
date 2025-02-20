@@ -1,0 +1,83 @@
+[
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "angular",
+            "iconPrefix": "fab"
+        },
+        "title": "Angular",
+        "level": "Advanced"
+    },
+    {
+        "title": "TypeScript",
+        "level": "Advanced",
+        "svgIcon": "svg/typescript.svg",
+        "faIcon": null
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "html5",
+            "iconPrefix": "fab"
+        },
+        "title": "HTML",
+        "level": "Expert"
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "sass",
+            "iconPrefix": "fab"
+        },
+        "title": "Sass",
+        "level": "Expert"
+    },
+    {
+        "title": "JavaScript",
+        "level": "Good Understanding",
+        "svgIcon": "svg/javascript.svg",
+        "faIcon": null
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "left-right"
+        },
+        "title": "Responsive Design",
+        "level": "Proficient"
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "github",
+            "iconPrefix": "fab"
+        },
+        "title": "Version Control (Git/ Github)",
+        "level": "Advanced"
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "figma",
+            "iconPrefix": "fab"
+        },
+        "title": " UI/UX Principles",
+        "level": "Good understanding"
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "screwdriver-wrench"
+        },
+        "title": "Problem-Solving",
+        "level": "Advanced"
+    },
+    {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "people-group"
+        },
+        "title": "Communication",
+        "level": "Proficient"
+    }
+]

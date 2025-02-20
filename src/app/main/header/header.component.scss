@@ -1,0 +1,162 @@
+@use '../../shared/variables.scss'as colors;
+@use '../../responsive.scss'as responsive;
+
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.35, 0.11, 0, 0.95);
+    position: fixed;
+    backdrop-filter: blur(7px);
+    box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
+    z-index: 10;
+    padding: 0 2rem;
+    box-sizing: border-box;
+
+    .logo {
+        font-family: "Nova Square", serif;
+        font-weight: 400;
+        font-size: 1.7rem;
+        transition: all cubic-bezier(0.075, 0.82, 0.165, 1) .3s;
+        background-color: colors.$russian-violet;
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        border: .1rem solid;
+
+        @media (hover: hover) {
+            &:hover {
+                box-shadow: rgba(colors.$african-violet, 30.04) 5px 5px 0px;
+                transform: translate(-5px, -5px);
+            }
+        }
+
+        &:active {
+            box-shadow: rgba(colors.$african-violet, 30.04) 2px 2px 0px;
+            transform: translate(-2px, -2px);
+
+        }
+    }
+}
+
+.big-header {
+    display: none;
+}
+
+.small-header {
+    display: grid;
+    justify-content: flex-end;
+
+    mat-icon {
+        cursor: pointer;
+    }
+
+}
+
+mat-sidenav-container {
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+mat-drawer {
+    width: 15rem;
+    background-color: colors.$russian-violet;
+    z-index: 5;
+    text-align: center;
+    box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.nav-list {
+    top: 10rem;
+    position: absolute;
+    width: 100%;
+}
+
+.menu-icon {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    right: 1rem;
+    z-index: 10;
+    display: grid;
+    align-items: center;
+}
+
+@include responsive.respond-to('md') {
+
+    header {
+        margin-top: 1rem;
+        width: calc(100% - 4rem);
+        border-radius: 2rem;
+        justify-self: anchor-center;
+
+        .logo {
+            font-size: 2rem;
+            border-radius: 1rem;
+        }
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .big-header {
+        display: block;
+    }
+
+    .small-header {
+        display: none;
+    }
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1.5rem;
+    counter-reset: my-awesome-counter;
+    list-style: none;
+
+}
+
+a,
+a[type=visited] {
+    text-decoration: none;
+    color: colors.$lilac;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+   
+    font-weight: 600;
+    padding: .5rem;
+    border-bottom: .15rem solid transparent;
+
+    @media (hover: hover) {
+        &:hover {
+            border-bottom: .15rem solid colors.$lilac;
+        }
+    }
+
+    &:active {
+        border-bottom: solid .1rem colors.$lilac;
+        opacity: .8;
+    }
+}
+
+.header-hidden {
+    transform: translateY(calc(-100% - 1rem));
+    box-shadow: none;
+}
+
+.top-position {
+    height: 80px;
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+
+    @include responsive.respond-to('lg') {
+        height: 150px;
+    }
+}
