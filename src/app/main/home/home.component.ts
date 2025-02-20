@@ -9,7 +9,7 @@ import { MainService } from '../services/main.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [SharedModule, MatButtonModule]
+  standalone: false
 })
 export class HomeComponent implements OnInit {
   skills: any[];

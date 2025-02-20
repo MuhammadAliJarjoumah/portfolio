@@ -13,16 +13,15 @@
             </p>
         </div>
         <div class="buttons">
-            <button color="primary" routerLink="/about" mat-raised-button>
+            <button color="primary" routerLink="/projects" mat-raised-button>
                 My Projects
             </button>
         </div>
     </div>
 </section>
-<section>
+<section id="about">
     <h1 class="about-title">About Me</h1>
     <div class="about-me-details">
-
         <p class="about-description">Results-driven Angular developer translating complex requirements into efficient
             code and exceptional user experiences. I thrive on challenging projects, finding innovative solutions to
             optimize performance and deliver impactful results.<br>
@@ -36,14 +35,14 @@
             in Angular 19 and beyond, and I'm also expanding my knowledge of .NET Core and .NET MAUI and
             ASP.NET.<br><br> I'm eager to
             contribute to a high-performing team and collaborate on challenging projects that push the boundaries of web
-            development
+            development, you can find more details in <a href="/about-me">about me</a> page
         </p>
         <div class="my-image">
             <img src="images/profile-image.jpg" alt="Developer">
         </div>
     </div>
 </section>
-<section>
+<section id="skillsSection">
     <h1>skills</h1>
     <div class="skills-cards">
         @for (skill of skills; track $index) {
@@ -63,15 +62,13 @@
         }
     </div>
 </section>
-<section>
-    <h1>Get In Touch</h1>
-    <div class="contact-me">
-        @for ( contact of myContacts; track $index){
-        <div class="contact-icon">
-            <a [href]="contact.url" target="_blank">
-                <fa-icon [icon]="[contact.faIcon.iconPrefix, contact.faIcon.iconName]"></fa-icon>
-            </a>
-        </div>
-        }
+
+<section id="contact">
+    <h1>Let's Connect</h1>
+    <div>
+        <p>
+            Feel free to reach out with any questions or inquiries
+        </p>
     </div>
+    <contact-form></contact-form>
 </section>

@@ -25,6 +25,9 @@ section {
 
     .buttons {
         z-index: 1;
+
+
+
     }
 }
 
@@ -110,25 +113,7 @@ section {
     }
 }
 
-.contact-me {
-    display: flex;
-    column-gap: 1.5rem;
-    justify-content: center;
-
-    .contact-icon {
-        font-size: 2rem;
-        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .2s;
-
-        @media (hover: hover) {
-            &:hover {
-                transform: rotate(6deg);
-                opacity: .7;
-            }
-        }
-
-        &:active {
-            transform: rotate(3deg);
-            opacity: .85;
-        }
-    }
+section#contact {
+    display: grid;
+    row-gap: 1rem;
 }

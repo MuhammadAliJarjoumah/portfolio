@@ -1,22 +1,25 @@
-<header [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}">
-    <a routerLink="/" class="logo">Your Logo</a>
+<header [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}" id="top">
+    <span class="logo">
+        <a href="/">M</a>
+    </span>
     <span class="menu-icon">
         <mat-icon mat-icon (click)="toggleMenu('click') ">{{isMenuOpened? 'close':'menu'}}</mat-icon>
     </span>
     <nav class="big-header">
         <div>
             <ol class="nav-links">
-                <li><a routerLink="/about">About</a></li>
-                <li><a routerLink="/projects">Projects</a></li>
-                <li><a routerLink="/contact">Contact</a></li>
+                <a (click)="$event.preventDefault(); scrollToSection('about')"> About </a><a
+                    (click)="$event.preventDefault(); scrollToSection('skillsSection')">Skills</a>
+                <a (click)="$event.preventDefault(); scrollToSection('contact')">Contact</a>
             </ol>
         </div>
     </nav>
-    <!-- <div class="small-header">
+    <div class="small-header">
 
         <mat-sidenav-container [dir]="'rtl'" [hasBackdrop]="true">
 
-            <mat-drawer [opened]="isMenuOpened" mode="over" (closedStart)="(toggleMenu('closedStart')) ; isMenuOpened=false">
+            <mat-drawer [opened]="isMenuOpened" mode="over"
+                (closedStart)="(toggleMenu('closedStart')) ; isMenuOpened=false">
                 <mat-nav-list class="nav-list">
                     <mat-list-item><a routerLink="/about">About</a></mat-list-item>
                     <mat-list-item><a routerLink="/projects">Projects</a></mat-list-item>
@@ -28,7 +31,7 @@
                 End
             </mat-sidenav-content>
         </mat-sidenav-container>
-    </div> -->
+    </div>
     <!-- <span [ngSwitch]="Theme.DARK" (click)="toggleTheme()" class="theme-button">
         <ng-container *ngSwitchCase="true">
             <li>

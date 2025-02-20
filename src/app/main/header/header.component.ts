@@ -36,24 +36,24 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   private breakpointObserver = inject(BreakpointObserver); // Inject BreakpointObserver
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    inject(BreakpointObserver)
-      .observe([
-        Breakpoints.XSmall,
-        Breakpoints.Small,
-        Breakpoints.Medium,
-        Breakpoints.Large,
-        Breakpoints.XLarge,
-      ])
-      .pipe(takeUntil(this.destroyed))
-      .subscribe(result => {
-        for (const query of Object.keys(result.breakpoints)) {
-          if (result.breakpoints[query]) {
+    // inject(BreakpointObserver)
+    //   .observe([
+    //     Breakpoints.XSmall,
+    //     Breakpoints.Small,
+    //     Breakpoints.Medium,
+    //     Breakpoints.Large,
+    //     Breakpoints.XLarge,
+    //   ])
+    //   .pipe(takeUntil(this.destroyed))
+    //   .subscribe(result => {
+    //     for (const query of Object.keys(result.breakpoints)) {
+    //       if (result.breakpoints[query]) {
 
-            this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
-            console.log(`Matched breakpoint: ${query}`, this.currentScreenSize);
-          }
-        }
-      });
+    //         this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
+    //         console.log(`Matched breakpoint: ${query}`, this.currentScreenSize);
+    //       }
+    //     }
+    //   });
 
   }
 
@@ -62,6 +62,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       this.prevScrollPos = window.scrollY;
     }
   }
+  
   ngOnDestroy() {
     this.destroyed.next();
     this.destroyed.complete();
@@ -93,5 +94,12 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     this.isMenuOpened = !this.isMenuOpened;
     // console.log("Menu Toggled ", message, this.isMenuOpened);
     // this.sharedService.setBodyOverflowHidden(this.isMenuOpened);
+  }
+
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

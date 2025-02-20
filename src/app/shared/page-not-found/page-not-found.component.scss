@@ -1,8 +1,9 @@
-.page-container{
+.page-container {
     display: grid;
     place-items: center;
+    height: 100vh;
 
-    img{
-        width:60%;  
+    img {
+        width: 45%;
     }
 }

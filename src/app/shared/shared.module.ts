@@ -4,7 +4,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImagesModalViewerComponent } from './images-modal-viewer/images-modal-viewer.component';
 import { ImagesSliderComponent } from './images-slider/images-slider.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -17,7 +16,6 @@ import { FontAwesomeIconsModule } from './font-awesome-icons/font-awesome-icons.
     CommonModule,
     ImagesSliderComponent,
     ImagesModalViewerComponent,
-    // FontAwesomeModule,
     PageNotFoundComponent,
     MatIconModule,
     MatButtonModule,
@@ -29,7 +27,6 @@ import { FontAwesomeIconsModule } from './font-awesome-icons/font-awesome-icons.
   exports: [
     ImagesSliderComponent,
     ImagesModalViewerComponent,
-    // FontAwesomeModule,
     PageNotFoundComponent,
     MatIconModule,
     MatButtonModule,

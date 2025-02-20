@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './footer/footer.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -18,19 +20,24 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
-  imports: [
+  declarations: [
     HomeComponent,
+    ContactFormComponent
+  ],
+  imports: [
     HeaderComponent,
     CommonModule,
     SharedModule,
     FooterComponent,
-    RouterModule.forChild(routes)],
+    ReactiveFormsModule,
+    RouterModule.forChild(routes)
+  ],
   exports: [
     RouterModule,
     HeaderComponent,
     SharedModule,
-    FooterComponent
+    FooterComponent,
+    ContactFormComponent
   ]
 })
 export class MainModule { }

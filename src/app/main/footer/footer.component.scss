@@ -1,0 +1,64 @@
+@use '../../shared/variables.scss'as colors;
+
+section {
+    padding: 1rem;
+    border-top: 1px solid;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    row-gap: 1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-me {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: center;
+
+    .contact-icon {
+        font-size: 1.5rem;
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .2s;
+
+        @media (hover: hover) {
+            &:hover {
+                transform: rotate(6deg);
+                opacity: .7;
+            }
+        }
+
+        &:active {
+            transform: rotate(3deg);
+            opacity: .85;
+        }
+    }
+}
+
+.mail-to {
+    display: flex;
+    column-gap: .5rem;
+
+    a {
+
+        &:link,
+        &:visited {
+            color: colors.$lilac;
+
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                opacity: .7;
+            }
+        }
+
+        &:active {
+            opacity: .85;
+        }
+    }
+}
+
+.author,
+.mail-to {
+    font-size: .8rem;
+}
