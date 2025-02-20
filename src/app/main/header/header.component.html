@@ -1,7 +1,6 @@
 <header [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}" id="top">
-    <span class="logo">
-        <a href="/">M</a>
-    </span>
+    <button mat-raised-button routerLink="/home" class="logo">
+        <h3>M</h3></button>
     <span class="menu-icon">
         <mat-icon mat-icon (click)="toggleMenu('click') ">{{isMenuOpened? 'close':'menu'}}</mat-icon>
     </span>
@@ -16,7 +15,7 @@
     </nav>
     <div class="small-header">
 
-        <mat-sidenav-container [dir]="'rtl'" [hasBackdrop]="true">
+        <!-- <mat-sidenav-container [dir]="'rtl'" [hasBackdrop]="true">
 
             <mat-drawer [opened]="isMenuOpened" mode="over"
                 (closedStart)="(toggleMenu('closedStart')) ; isMenuOpened=false">
@@ -30,7 +29,7 @@
             <mat-sidenav-content>
                 End
             </mat-sidenav-content>
-        </mat-sidenav-container>
+        </mat-sidenav-container> -->
     </div>
     <!-- <span [ngSwitch]="Theme.DARK" (click)="toggleTheme()" class="theme-button">
         <ng-container *ngSwitchCase="true">
