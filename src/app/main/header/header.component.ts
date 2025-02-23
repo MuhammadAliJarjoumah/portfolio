@@ -1,27 +1,24 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, EventEmitter, HostListener, inject, Inject, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, HostListener, inject, Inject, Input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
 import { Theme } from '../../models/theme.model';
 import { SharedModule } from '../../shared/shared.module';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { SharedService } from '../../shared/services/shared.service';
+import { Router } from '@angular/router';
 
 @Component({
-  standalone: true,
+  standalone: false,
   selector: 'app-header',
-  imports: [SharedModule, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  providers: [SharedService]
 })
 export class HeaderComponent implements AfterViewInit, OnDestroy {
-  private sharedService = inject(SharedService);
   prevScrollPos: number = 0;
   isScrolledDown: boolean = false;
   isTopPosition: boolean = true;
   Theme = Theme;
-  isMenuOpened: boolean = false;
+  @Input() isMenuOpened: boolean = false;
   currentScreenSize: string;
   destroyed = new Subject<void>();
   displayNameMap = new Map([
@@ -31,29 +28,30 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     [Breakpoints.Large, 'Large'],
     [Breakpoints.XLarge, 'XLarge'],
   ]);
+  @Input() isBigHeader: boolean;
   @Output() themeChanged: EventEmitter<Theme> = new EventEmitter<Theme>();
   @Output() menuToggled: EventEmitter<boolean> = new EventEmitter<boolean>();
   private breakpointObserver = inject(BreakpointObserver); // Inject BreakpointObserver
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    // inject(BreakpointObserver)
-    //   .observe([
-    //     Breakpoints.XSmall,
-    //     Breakpoints.Small,
-    //     Breakpoints.Medium,
-    //     Breakpoints.Large,
-    //     Breakpoints.XLarge,
-    //   ])
-    //   .pipe(takeUntil(this.destroyed))
-    //   .subscribe(result => {
-    //     for (const query of Object.keys(result.breakpoints)) {
-    //       if (result.breakpoints[query]) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private _Router: Router) {
+    inject(BreakpointObserver)
+      .observe([
+        Breakpoints.XSmall,
+        Breakpoints.Small,
+        Breakpoints.Medium,
+        Breakpoints.Large,
+        Breakpoints.XLarge,
+      ])
+      .pipe(takeUntil(this.destroyed))
+      .subscribe(result => {
+        for (const query of Object.keys(result.breakpoints)) {
+          if (result.breakpoints[query]) {
 
-    //         this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
-    //         console.log(`Matched breakpoint: ${query}`, this.currentScreenSize);
-    //       }
-    //     }
-    //   });
+            this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
+            console.log(`Matched breakpoint: ${query}`, this.currentScreenSize);
+          }
+        }
+      });
 
   }
 
@@ -90,10 +88,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     // this.themeChanged.emit(Theme.DARK);
   }
 
-  toggleMenu(message: string) {//message is not used, you can delete it.
+  toggleMenu() {
     this.isMenuOpened = !this.isMenuOpened;
-    // console.log("Menu Toggled ", message, this.isMenuOpened);
-    // this.sharedService.setBodyOverflowHidden(this.isMenuOpened);
+    this.menuToggled.emit(this.isMenuOpened);
   }
 
   scrollToSection(sectionId: string) {
@@ -101,5 +98,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  onClickHome() {
+    this._Router.navigate(['/']);
   }
 }

@@ -8,6 +8,7 @@ import { ImagesModalViewerComponent } from './images-modal-viewer/images-modal-v
 import { ImagesSliderComponent } from './images-slider/images-slider.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FontAwesomeIconsModule } from './font-awesome-icons/font-awesome-icons.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FontAwesomeIconsModule } from './font-awesome-icons/font-awesome-icons.
     MatSidenavModule,
     MatListModule,
     NgClass,
-    FontAwesomeIconsModule
+    FontAwesomeIconsModule,
+    MatToolbarModule
   ],
   exports: [
     ImagesSliderComponent,
@@ -33,7 +35,8 @@ import { FontAwesomeIconsModule } from './font-awesome-icons/font-awesome-icons.
     MatSidenavModule,
     MatListModule,
     NgClass,
-    FontAwesomeIconsModule
+    FontAwesomeIconsModule,
+    MatToolbarModule
   ]
 })
 export class SharedModule { }

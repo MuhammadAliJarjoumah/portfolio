@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './footer/footer.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 const routes: Routes = [
   {
@@ -22,10 +23,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    HeaderComponent,
+    SidenavComponent
   ],
   imports: [
-    HeaderComponent,
     CommonModule,
     SharedModule,
     FooterComponent,
@@ -37,7 +39,8 @@ const routes: Routes = [
     HeaderComponent,
     SharedModule,
     FooterComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    SidenavComponent
   ]
 })
 export class MainModule { }

@@ -13,14 +13,14 @@
             </p>
         </div>
         <div class="buttons">
-            <button color="primary" routerLink="/projects" mat-raised-button>
+            <button color="primary" (click)="onClickLink('/projects')" routerLink="/projects" mat-raised-button>
                 My Projects
             </button>
         </div>
     </div>
 </section>
 <section id="about">
-    <h1 class="about-title">About Me</h1>
+    <h1>About Me</h1>
     <div class="about-me-details">
         <p class="about-description">Results-driven Angular developer translating complex requirements into efficient
             code and exceptional user experiences. I thrive on challenging projects, finding innovative solutions to
@@ -35,7 +35,10 @@
             in Angular 19 and beyond, and I'm also expanding my knowledge of .NET Core and .NET MAUI and
             ASP.NET.<br><br> I'm eager to
             contribute to a high-performing team and collaborate on challenging projects that push the boundaries of web
-            development, you can find more details in <a href="/about-me">about me</a> page
+            development, you can find more details in <span class="link">
+                <a (click)="onClickLink('/about-me')">about me <fa-icon icon="arrow-up-right-from-square"></fa-icon></a>
+            </span>
+            page
         </p>
         <div class="my-image">
             <img src="images/profile-image.jpg" alt="Developer">

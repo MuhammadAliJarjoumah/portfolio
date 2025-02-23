@@ -1,6 +1,19 @@
-<div class="app-container">
-    <app-header (themeChanged)="themeChanged($event)">
-    </app-header>
-    <router-outlet />
-    <app-footer></app-footer>
+<div class="app-container"
+    [ngClass]="{'menu-opened': (menuOpened && !isBigHeader), 'menu-closed': (isBigHeader && !menuOpened) }">
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #sidenav mode="over" (openedChange)="menuToggled($event)">
+            <app-sidenav (closeMenu)="menuToggled(!$event); sidenav.toggle()"></app-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content [ngClass]="{'blur-content': menuOpened}">
+            <mat-toolbar color="primary" (closedStart)="menuToggled(false)">
+                <div class="big-header">
+                    <app-header [isBigHeader]="isBigHeader" (menuToggled)="sidenav.toggle()"
+                        [isMenuOpened]="menuOpened">
+                    </app-header>
+                </div>
+            </mat-toolbar>
+            <router-outlet />
+            <app-footer></app-footer>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>

@@ -8,13 +8,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: width 0.3s variables.$transitionVariable, box-shadow .3s variables.$transitionVariable;
+    transition: all 0.3s variables.$transitionVariable;
     position: fixed;
     backdrop-filter: blur(7px);
     box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
     z-index: 10;
     padding: 0 2rem;
     box-sizing: border-box;
+    top: 0;
 
     .logo {
         font-family: "Nova Square", serif;
@@ -28,42 +29,12 @@ header {
 .small-header {
     display: grid;
     justify-content: flex-end;
-
-    mat-icon {
-        cursor: pointer;
-    }
-
 }
-
-// mat-sidenav-container {
-//     height: 100vh;
-//     position: fixed;
-//     width: 100%;
-//     top: 0;
-// }
-
-// mat-drawer {
-//     width: 15rem;
-//     background-color: variables.$russian-violet;
-//     z-index: 5;
-//     text-align: center;
-//     box-shadow: -10px 0px 30px -15px rgba(2, 12, 27, 0.7);
-// }
 
 .nav-list {
     top: 10rem;
     position: absolute;
     width: 100%;
-}
-
-.menu-icon {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    right: 1rem;
-    z-index: 10;
-    display: grid;
-    align-items: center;
 }
 
 @include responsive.respond-to('md') {
@@ -75,13 +46,8 @@ header {
         justify-self: anchor-center;
 
         .logo {
-            font-size: 2rem;
             border-radius: 1rem;
         }
-    }
-
-    .menu-icon {
-        display: none;
     }
 
     .big-header {

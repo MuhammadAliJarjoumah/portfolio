@@ -9,6 +9,9 @@
 @use 'app/themes/custom-themes.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
+* {
+    box-sizing: border-box;
+}
 
 html {
     // color-scheme: light;
@@ -44,9 +47,10 @@ body.overflow-hidden {
     overflow: hidden;
 }
 
+
 .mat-mdc-raised-button:not(:disabled),
 .mat-mdc-raised-button:disabled {
-    z-index: 1;
+    // z-index: 1;
     font-weight: 600;
     border-radius: .5rem;
     border: .1rem solid colors.$lilac;
@@ -88,7 +92,7 @@ body.overflow-hidden {
 }
 
 html::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -112,10 +116,13 @@ textarea {
 
 a,
 a:visited {
+    text-decoration: underline;
     color: colors.$lilac;
     transition: all ease-in-out .2s;
+    cursor: pointer;
 
     @media (hover: hover) {
+
         &:hover {
             color: #fff;
             text-decoration: none;

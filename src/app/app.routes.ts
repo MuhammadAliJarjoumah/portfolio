@@ -4,14 +4,14 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 
 export const routes: Routes = [
     {
-        path: 'home',
+        path: '',
         component: HomeComponent,
         title: 'Home page',
     },
     {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'home'
+        path: 'home',
+        redirectTo: '',
+        pathMatch: 'full'
     },
     {
         path: '**',

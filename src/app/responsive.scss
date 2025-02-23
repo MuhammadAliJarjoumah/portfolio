@@ -103,7 +103,10 @@ body {
 
 @each $heading,
 $size in $heading-sizes {
-    #{ $heading } {
+
+    #{ $heading },
+    button #{$heading},
+    button #{$heading} fa-icon {
         @include responsive(xs) {
             font-size: $size * $font-size-scale-xs;
         }

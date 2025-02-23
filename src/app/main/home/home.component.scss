@@ -1,4 +1,4 @@
-@use '../../shared/variables.scss'as colors;
+@use '../../shared/variables.scss'as variables;
 @use '../../responsive.scss'as responsive;
 @use "sass:color";
 
@@ -83,7 +83,7 @@ section {
     .skill-card {
         display: grid;
         grid-template-rows: 4rem 3rem 3rem;
-        border: .1rem solid colors.$lilac;
+        border: .1rem solid variables.$lilac;
         border-radius: 1rem;
         width: 15%;
         min-width: 12rem;
@@ -116,4 +116,18 @@ section {
 section#contact {
     display: grid;
     row-gap: 1rem;
+}
+
+.link {
+
+    &,
+    fa-icon {
+        transition: color variables.$transitionVariable .2s;
+    }
+
+    @media (hover: hover) {
+        &:hover fa-icon {
+            color: #fff;
+        }
+    }
 }

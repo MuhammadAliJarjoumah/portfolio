@@ -3,8 +3,28 @@
     overflow: auto;
 }
 
+.mat-drawer.mat-drawer-opened {
+    height: 100vh;
+    backdrop-filter: blur(35px);
+    box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
+    position: fixed;
+    top: 0;
+}
 
-.menu-opened {
-    overflow: hidden !important;
-    /* Prevents scrolling */
+.mat-toolbar-single-row {
+    padding: 0;
+}
+
+mat-toolbar {
+    position: relative;
+    z-index: 1001;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+    z-index: 10;
+}
+
+.blur-content{
+    transition: all ease-in-out .2;
+    filter: blur(6px);
 }
