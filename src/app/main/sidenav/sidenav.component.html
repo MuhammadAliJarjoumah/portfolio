@@ -1,9 +1,13 @@
-<nav>
-    <div class="links">
-        <button mat-raised-button (click)="onClickLink('/')">Home</button>
-        <button mat-raised-button (click)="onClickLink('/about-me')">About</button>
-        <button mat-raised-button (click)="$event.preventDefault(); scrollToSection('skillsSection')">Skills</button>
-        <button mat-raised-button (click)="$event.preventDefault(); scrollToSection('contact')">Contact</button>
-    </div>
-    <app-footer class="footer"></app-footer>
-</nav>
+<div class="container">
+    <nav>
+        <div class="links">
+            <button mat-raised-button (click)="onClickLink('/')">Home</button>
+            <button mat-raised-button (click)="onClickLink('/about-me')">About Me</button>
+            <button mat-raised-button
+                (click)="$event.preventDefault(); scrollToSection('skillsSection')">Skills</button>
+            <button mat-raised-button (click)="$event.preventDefault(); scrollToSection('contact')">Contact</button>
+        </div>
+
+    </nav>
+    <app-footer class="footer" [isOnSidebar]="true"></app-footer>
+</div>

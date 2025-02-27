@@ -1,24 +1,18 @@
 <section>
-    <!-- <h1>Get In Touch</h1> -->
+    <h4>Get In Touch</h4>
     <div class="contact-me">
         @for ( contact of accounts; track $index){
         <div class="contact-icon">
-            <a [href]="contact.url" target="_blank">
+            <a [href]="contact.url" target="_blank" title="{{contact.ariaLabel}}">
                 <fa-icon
                     [icon]="[(contact.faIcon.iconPrefix ?  contact.faIcon.iconPrefix : 'fas'), contact.faIcon.iconName]"></fa-icon>
             </a>
         </div>
         }
     </div>
-    <div class="mail-to">
-        <span>
-            Email:
-        </span>
-        <span>
-            <a href="mailto:mohammadalijarjoumah97@gmail.com" type="email">{{'mohammadalijarjoumah97@gmail.com'}}</a>
-        </span>
-    </div>
-    <p class="author">
-        Designed by <b>Mohammad Ali Jarjoumah</b>
-    </p>
+    @if(!isOnSidebar){
+        <p class="author">
+            Designed by <b>Mohammad Ali Jarjoumah</b>
+        </p>
+    }
 </section>

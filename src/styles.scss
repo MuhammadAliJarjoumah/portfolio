@@ -2,12 +2,15 @@
 // For more information: https://material.angular.io/guide/theming
 // @use '/theme-colors' as theme;
 // @use '@angular/material'as mat;
+@use 'app/shared/mixins.scss'as mixins;
 @use 'app/shared/variables'as colors;
 @use 'app/responsive'as responsive;
 @use 'app/themes/light-theme.scss';
 @use 'app/themes/dark-theme.scss';
 @use 'app/themes/custom-themes.scss';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@use 'app/shared/shimmer-effect.scss';
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -17,12 +20,31 @@ html {
     // color-scheme: light;
     // @include mat.theme((color: mat.$azure-palette));
     scroll-behavior: smooth;
+    // cursor: 'pointer';
 }
 
-html.dark-mode {
-    // color-scheme: dark;
-    // @include mat.theme((color: mat.$violet-palette));
+.cursor-effect {
+    position: absolute;
+    width: 20px;
+    /* Adjust as needed */
+    height: 20px;
+    /* Adjust as needed */
+    background-color: transparent;
+    /* No background color */
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    /* Center the effect */
+    box-shadow: 0 4px 8px rgba(colors.$lilac, .5);
+    /* Adjust values for shadow effect */
+    border-radius: 50%;
+    /* optional, if you want a softer shadow */
+    // border:.1rem solid red;
 }
+
+// html.dark-mode {
+// color-scheme: dark;
+// @include mat.theme((color: mat.$violet-palette));
+// }
 
 p {
     margin: 0;
@@ -32,50 +54,32 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Source Code Pro", serif !important;
     color: colors.$lilac;
     transition: all ease-in-out .2s;
     background: colors.$russian-violet;
 }
 
-fa-icon {
-    color: colors.$lilac;
-}
-
-
 body.overflow-hidden {
     overflow: hidden;
 }
 
+.mat-mdc-icon-button {
+    display: grid !important;
+    place-content: center;
+}
 
-.mat-mdc-raised-button:not(:disabled),
 .mat-mdc-raised-button:disabled {
-    // z-index: 1;
     font-weight: 600;
     border-radius: .5rem;
     border: .1rem solid colors.$lilac;
     transition: all .15s cubic-bezier(.4, 0, .2, 1);
-    padding: 2rem;
+    padding: .8rem;
 }
 
-.mat-mdc-raised-button:not(:disabled) {
-    color: colors.$russian-violet;
-    background-color: colors.$lilac;
-
-    @media (hover:hover) {
-        &:hover {
-            background-color: colors.$russian-violet;
-            box-shadow: rgba($color: colors.$african-violet, $alpha: 1.0) 4px 4px 0;
-            transform: translate(-4px, -4px);
-        }
-    }
-
-    &:active {
-        background-color: colors.$russian-violet;
-        box-shadow: rgba($color: colors.$african-violet, $alpha: 1.0) 2px 2px 0 !important;
-        transform: translate(-2px, -2px);
-
-    }
+.mat-mdc-raised-button:not(:disabled),
+.my-box-shadow {
+    @include mixins.myBoxShadow;
 }
 
 .mat-mdc-raised-button:disabled {

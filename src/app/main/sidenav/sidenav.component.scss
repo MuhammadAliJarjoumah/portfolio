@@ -1,15 +1,41 @@
-nav {
-    position: relative;
-    padding: 1rem;
-    height: 100vh;
+@use '../../shared/variables.scss'as variables;
+@use '../../shared/mixins.scss'as mixins;
 
-    .links {
-        display: grid;
-        row-gap: 1rem;
+.container {
+    position: relative;
+    padding: 4rem 0 10rem 0;
+
+    nav {
+        padding: 1rem;
+
+        .close {
+            @include mixins.myBoxShadow;
+            & {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                padding: .2rem .6rem;
+                border-radius: 2.5rem;
+                font-size: 1.6rem;
+            }
+        }
+
+        .links {
+            display: grid;
+            align-content: flex-start;
+            row-gap: 1rem;
+
+            button {
+                border-radius: 2.5rem;
+            }
+        }
+
     }
 
     .footer {
-        position: absolute;
+        position: fixed;
+        overflow: hidden;
         bottom: 0;
+        width: 100%;
     }
 }

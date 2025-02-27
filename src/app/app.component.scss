@@ -1,14 +1,34 @@
+@use './responsive.scss'as responsive;
+
 .app-container {
     position: relative;
     overflow: auto;
 }
 
 .mat-drawer.mat-drawer-opened {
-    height: 100vh;
     backdrop-filter: blur(35px);
     box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
     position: fixed;
-    top: 0;
+    width: calc(100% - 1rem);
+    max-width: calc(30rem - 1rem);
+    border: .1rem solid;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.sidenav-height {
+    height: calc(100vh - 100px);
+    top: 100px;
+}
+
+.on-top {
+    height: calc(100vh - 80px);
+    top: 80px;
+
+    @include responsive.respond-to('lg') {
+        height: calc(100vh - 150px);
+        top: 150px;
+    }
 }
 
 .mat-toolbar-single-row {
@@ -24,7 +44,7 @@ mat-toolbar {
     z-index: 10;
 }
 
-.blur-content{
+.blur-content {
     transition: all ease-in-out .2;
     filter: blur(6px);
 }

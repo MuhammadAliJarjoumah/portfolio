@@ -1,0 +1,92 @@
+@use './variables.scss'as variables;
+
+@keyframes topToDown {
+    0% {
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes downToTop {
+    0% {
+        transform: translateY(2rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes rightToLeft {
+    0% {
+        transform: translateX(10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin movingAnimation($animationName) {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: $animationName, opacityAnimation;
+    animation-timing-function: linear;
+}
+
+@mixin myBoxShadow {
+    font-weight: 600;
+    border-radius: .5rem;
+    border: .1rem solid variables.$lilac;
+    transition: all .15s cubic-bezier(.4, 0, .2, 1);
+    padding: .8rem;
+    cursor: pointer;
+
+    @media (hover:hover) {
+        &:hover {
+            background-color: variables.$russian-violet;
+            box-shadow: rgba($color: variables.$african-violet, $alpha: 1.0) 4px 4px 0;
+            transform: translate(-4px, -4px);
+        }
+    }
+
+    @media not (hover:hover) {
+
+        &,
+        &:focus {
+            background-color: variables.$russian-violet;
+            box-shadow: rgba($color: variables.$african-violet, $alpha: 1.0) 4px 4px 0;
+            transform: translate(-4px, -4px);
+        }
+    }
+
+    &:active {
+        background-color: variables.$russian-violet;
+        box-shadow: rgba($color: variables.$african-violet, $alpha: 1.0) 2px 2px 0 !important;
+        transform: translate(-2px, -2px);
+
+    }
+}

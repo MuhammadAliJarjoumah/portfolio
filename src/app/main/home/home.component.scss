@@ -1,6 +1,7 @@
 @use '../../shared/variables.scss'as variables;
 @use '../../responsive.scss'as responsive;
 @use "sass:color";
+@use '../../shared/mixins.scss'as mixins;
 
 section {
     padding: 2rem;
@@ -8,11 +9,31 @@ section {
     margin: auto;
 }
 
+.name,
+.header-description {
+    margin: 0;
+    color: transparent;
+    -webkit-text-stroke: 1px variables.$lilac;
+    font-weight: 900;
+}
+
+.down-to-top {
+    @include mixins.movingAnimation($animationName:downToTop);
+}
+
+.left-to-right {
+    @include mixins.movingAnimation($animationName:rightToLeft);
+}
+
+.right-to-left {
+    @include mixins.movingAnimation($animationName:leftToRight);
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 100px);
 
     .header-content {
         display: grid;
@@ -21,13 +42,16 @@ section {
 
     .header-title {
         margin: 0;
+        overflow: hidden;
+        -webkit-text-stroke: 0;
     }
 
-    .buttons {
-        z-index: 1;
+    @media (max-width: 386.98px) {
+        padding-top: 6rem;
+    }
 
-
-
+    @include responsive.responsive('lg') {
+        padding-top: 6rem;
     }
 }
 
@@ -41,9 +65,11 @@ section {
         display: grid;
         width: calc(100% - 1rem - 70%);
         min-width: 20rem;
+        min-height: 20rem;
 
         img {
             width: 100%;
+            height: 100%;
             border-radius: 50%;
             box-shadow: rgb(9 9 9 / 85%) 20px 18px 10px;
             filter: opacity(0.5);
@@ -74,40 +100,36 @@ section {
     }
 }
 
-.skills-cards {
-    display: flex;
-    flex-wrap: wrap;
+.skills {
+    display: grid;
+    grid-template-columns: auto auto;
     gap: 1rem;
-    justify-content: center;
 
-    .skill-card {
+    @include responsive.respond-to('xxs') {
+        grid-template-columns: auto;
+    }
+
+    .skill {
         display: grid;
-        grid-template-rows: 4rem 3rem 3rem;
-        border: .1rem solid variables.$lilac;
-        border-radius: 1rem;
-        width: 15%;
-        min-width: 12rem;
-        max-width: 25rem;
-        height: 10rem;
-        text-align: center;
+        grid-template-columns: 3rem auto;
+        row-gap: .5rem;
         padding: .5rem;
-        transition: all ease-in-out .2s;
         align-items: center;
-        flex-grow: 1;
 
-        i,
         img {
-            width: 2.5rem;
+            width: 2rem;
         }
 
         fa-icon {
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
-        @media (hover: hover) {
-            &:hover {
-                box-shadow: rgb(0 0 0 / 45%) 8px 8px 29px 5px;
-                opacity: .8;
+        .skill-details {
+            display: grid;
+            row-gap: .5rem;
+
+            .title {
+                font-weight: 550;
             }
         }
     }

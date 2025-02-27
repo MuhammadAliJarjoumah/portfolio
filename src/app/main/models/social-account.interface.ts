@@ -4,4 +4,5 @@ export interface ISocialAccount {
     faIcon: FontAwesomeIcon;//may cause type error?
     name: string;
     url: string;
+    ariaLabel?: string;
 }

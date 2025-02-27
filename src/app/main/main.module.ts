@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { FontAwesomeIconsModule } from '../shared/font-awesome-icons/font-awesome-icons.module';
 
 const routes: Routes = [
   {
@@ -25,14 +26,16 @@ const routes: Routes = [
     HomeComponent,
     ContactFormComponent,
     HeaderComponent,
+    FooterComponent,
     SidenavComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    FooterComponent,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FontAwesomeIconsModule
+
   ],
   exports: [
     RouterModule,

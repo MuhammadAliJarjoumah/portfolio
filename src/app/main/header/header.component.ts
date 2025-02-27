@@ -1,11 +1,11 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, EventEmitter, HostListener, inject, Inject, Input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
-import { Theme } from '../../models/theme.model';
-import { SharedModule } from '../../shared/shared.module';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, Component, EventEmitter, HostListener, inject, Inject, Input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Router } from '@angular/router';
+import { Theme } from '../../models/theme.model';
+import { PrimaryColors } from '../../shared/primary-colors';
 
 @Component({
   standalone: false,
@@ -17,6 +17,8 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   prevScrollPos: number = 0;
   isScrolledDown: boolean = false;
   isTopPosition: boolean = true;
+  @Output() onTopPosition: EventEmitter<boolean> = new EventEmitter<boolean>();
+  primaryColors = PrimaryColors;
   Theme = Theme;
   @Input() isMenuOpened: boolean = false;
   currentScreenSize: string;
@@ -35,21 +37,11 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private _Router: Router) {
     inject(BreakpointObserver)
-      .observe([
-        Breakpoints.XSmall,
-        Breakpoints.Small,
-        Breakpoints.Medium,
-        Breakpoints.Large,
-        Breakpoints.XLarge,
+      .observe(['min-width: 768px'
       ])
-      .pipe(takeUntil(this.destroyed))
       .subscribe(result => {
-        for (const query of Object.keys(result.breakpoints)) {
-          if (result.breakpoints[query]) {
-
-            this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
-            console.log(`Matched breakpoint: ${query}`, this.currentScreenSize);
-          }
+        if (result.matches) {
+          console.log('result', result);
         }
       });
 
@@ -59,8 +51,9 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.prevScrollPos = window.scrollY;
     }
+    // this.onTopPosition.emit(this.isTopPosition);
   }
-  
+
   ngOnDestroy() {
     this.destroyed.next();
     this.destroyed.complete();
@@ -80,6 +73,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
       } else {
         this.isTopPosition = false;
       }
+      this.onTopPosition.emit(this.isTopPosition);
     }
   }
 

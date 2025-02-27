@@ -1,19 +1,21 @@
 [
     {
         "faIcon": {
-            "iconName": "linkedin",
+            "iconName": "linkedin-in",
             "iconPrefix": "fab"
         },
         "name": "LinkedIn",
-        "url": "https://www.linkedin.com/in/mohammad-ali-jarjoumah-17704a173/"
+        "url": "https://www.linkedin.com/in/mohammad-ali-jarjoumah-17704a173/",
+        "ariaLabel": "View LinkedIn Profile"
     },
     {
         "faIcon": {
-            "iconName": "github-square",
+            "iconName": "github",
             "iconPrefix": "fab"
         },
         "name": "GitHub",
-        "url": "https://github.com/MohammadAliJa"
+        "url": "https://github.com/MohammadAliJa",
+        "ariaLabel": "View GitHub Profile"
     },
     {
         "faIcon": {
@@ -21,7 +23,26 @@
             "iconPrefix": "fab"
         },
         "name": "Instagram",
-        "url": "https://www.instagram.com/muhammad_ali_jarjoumah/"
+        "url": "https://www.instagram.com/muhammad_ali_jarjoumah/",
+        "ariaLabel": "View Instagram Profile"
+    },
+    {
+        "faIcon": {
+            "iconName": "envelope",
+            "iconPrefix": "fas"
+        },
+        "name": "Mail",
+        "url": "mailto:mohammadalijarjoumah97@gmail.com",
+        "ariaLabel": "Contact by Email"
+    },
+    {
+        "faIcon": {
+            "iconName": "whatsapp",
+            "iconPrefix": "fab"
+        },
+        "name": "WhatsApp",
+        "url": "https://wa.me/96176455784?text=Hello%20Mohammad%20Ali,%20can%20we%20get%20more%20details%20about%20your%20experience?",
+        "ariaLabel": "Chat on WhatsApp"
     },
     {
         "faIcon": {
@@ -29,6 +50,7 @@
             "iconPrefix": "fab"
         },
         "name": "npm",
-        "url": "https://www.npmjs.com/~mohammadalijarjoumah97"
+        "url": "https://www.npmjs.com/~mohammadalijarjoumah97",
+        "ariaLabel": "View NpmJs Profile"
     }
 ]

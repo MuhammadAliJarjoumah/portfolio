@@ -1,14 +1,18 @@
-@use '../../shared/variables.scss'as colors;
+@use '../../shared/variables.scss'as variables;
 
 section {
     padding: 1rem;
     border-top: 1px solid;
-    width: 90%;
-    margin: auto;
+    width: 100%;
     display: grid;
     row-gap: 1rem;
     justify-content: center;
     text-align: center;
+    background-color: variables.$russian-violet;
+
+    h4{
+        margin: 1rem;
+    }
 }
 
 .contact-me {
@@ -34,31 +38,30 @@ section {
     }
 }
 
-.mail-to {
-    display: flex;
-    column-gap: .5rem;
+// .mail-to {
+//     display: flex;
+//     column-gap: .5rem;
 
-    a {
+//     a {
 
-        &:link,
-        &:visited {
-            color: colors.$lilac;
+//         &:link,
+//         &:visited {
+//             color: variables.$lilac;
 
-        }
+//         }
 
-        @media (hover: hover) {
-            &:hover {
-                opacity: .7;
-            }
-        }
+//         @media (hover: hover) {
+//             &:hover {
+//                 opacity: .7;
+//             }
+//         }
 
-        &:active {
-            opacity: .85;
-        }
-    }
-}
+//         &:active {
+//             opacity: .85;
+//         }
+//     }
+// }
 
-.author,
-.mail-to {
+.author {
     font-size: .8rem;
 }
