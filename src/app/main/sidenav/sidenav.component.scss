@@ -10,6 +10,7 @@
 
         .close {
             @include mixins.myBoxShadow;
+
             & {
                 position: absolute;
                 top: 1rem;
@@ -24,6 +25,7 @@
             display: grid;
             align-content: flex-start;
             row-gap: 1rem;
+            padding: 1rem;
 
             button {
                 border-radius: 2.5rem;

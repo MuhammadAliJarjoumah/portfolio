@@ -1,8 +1,68 @@
 @use './responsive.scss'as responsive;
+@use './shared/variables.scss'as variables;
 
 .app-container {
     position: relative;
-    overflow: auto;
+    overflow: hidden;
+}
+
+#cursor-bg,
+#cursor-circle,
+#cursor-dot {
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    transition: all .1s ease;
+}
+
+#cursor-bg {
+    background-color: variables.$lilac;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(300px);
+    opacity: .4;
+}
+
+#cursor-circle {
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid variables.$lilac;
+    mix-blend-mode: difference;
+    // transform: scale(4);
+}
+
+#cursor-dot {
+    background-color: transparent;
+    width: .1rem;
+    height: .1rem;
+    border-radius: 50%;
+    border: 2px solid variables.$lilac;
+    mix-blend-mode: difference;
+}
+
+.scale-default {
+    width: 30px;
+    height: 30px;
+}
+
+.scale-2 {
+    width: calc(20px * 2);
+    height: calc(20px * 2);
+}
+
+.scale-4 {
+    width: calc(20px * 4);
+    height: calc(20px * 4);
+}
+
+.hide {
+    display: none;
+}
+
+.blend-mode {
+    background-color: variables.$lilac !important;
 }
 
 .mat-drawer.mat-drawer-opened {

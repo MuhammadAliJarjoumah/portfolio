@@ -1,33 +1,25 @@
 <header [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}" id="top">
-    <a (click)="onClickHome()" class="logo">
+    <a (click)="onClickHome()" class="logo" (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
         <h3>
             M
         </h3>
     </a>
-    <nav class="big-header">
-        <div>
-            <ol class="nav-links">
-                <a (click)="$event.preventDefault(); scrollToSection('about')"> About </a><a
-                    (click)="$event.preventDefault(); scrollToSection('skillsSection')">Skills</a>
-                <a (click)="$event.preventDefault(); scrollToSection('contact')">Contact</a>
-            </ol>
-        </div>
-    </nav>
-    <div class="small-header" [ngClass]="{'menu-opened': isMenuOpened, 'menu-closed': !isMenuOpened}">
-            <svg (click)="toggleMenu()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icons-style" 
-                class="menu-button">
-                <title>Menu</title>
-                <circle cx="12" cy="12" r="4" id="c1"></circle>
-                <circle cx="24" cy="12" r="4" id="c2"></circle>
-                <circle cx="36" cy="12" r="4" id="c3"></circle>
-                <circle cx="36" cy="24" r="4" id="c4"></circle>
-                <circle cx="36" cy="36" r="4" id="c5"></circle>
-                <circle cx="24" cy="36" r="4" id="c6"></circle>
-                <circle cx="12" cy="36" r="4" id="c7"></circle>
-                <circle cx="12" cy="24" r="4" id="c8"></circle>
-                <rect x="21" y="21" id="r1" rx="3" ry="3"></rect>
-                <rect x="21" y="21" id="r2" rx="3" ry="3"></rect>
-            </svg>
+    <div class="small-header" [ngClass]="{'menu-opened': isMenuOpened, 'menu-closed': !isMenuOpened}"
+        (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
+        <svg (click)="toggleMenu()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icons-style"
+            class="menu-button">
+            <title>Menu</title>
+            <circle cx="12" cy="12" r="4" id="c1"></circle>
+            <circle cx="24" cy="12" r="4" id="c2"></circle>
+            <circle cx="36" cy="12" r="4" id="c3"></circle>
+            <circle cx="36" cy="24" r="4" id="c4"></circle>
+            <circle cx="36" cy="36" r="4" id="c5"></circle>
+            <circle cx="24" cy="36" r="4" id="c6"></circle>
+            <circle cx="12" cy="36" r="4" id="c7"></circle>
+            <circle cx="12" cy="24" r="4" id="c8"></circle>
+            <rect id="r1"></rect>
+            <rect id="r2"></rect>
+        </svg>
     </div>
     <!-- <span [ngSwitch]="Theme.DARK" (click)="toggleTheme()" class="theme-button">
         <ng-container *ngSwitchCase="true">

@@ -38,10 +38,6 @@ header {
     }
 }
 
-.big-header {
-    display: none;
-}
-
 .small-header {
     border: 0;
     display: grid;
@@ -52,6 +48,7 @@ header {
     .menu-button {
         stroke: variables.$lilac;
         fill: none;
+        stroke-width: 2px;
         cursor: pointer;
 
         &:active {
@@ -70,52 +67,13 @@ header {
     }
 
     rect {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         opacity: .75;
-    }
-
-    @media (hover: hover) {
-        &:hover {
-
-            #c2,
-            #c4,
-            #c6,
-            #c8 {
-                opacity: 0;
-            }
-
-            #r1,
-            #r2 {
-                opacity: 1;
-            }
-
-            #c2 {
-                transform: translateX(0px) translateY(-24px);
-            }
-
-            #c4 {
-                transform: translateX(24px) translateY(0px);
-            }
-
-            #c6 {
-                transform: translateX(0px) translateY(24px);
-            }
-
-            #c8 {
-                transform: translateX(-24px) translateY(0px);
-            }
-
-            #r1 {
-                transform: translateX(-12px) translateY(0px);
-                width: 30px;
-            }
-
-            #r2 {
-                transform: translateX(0px) translateY(-12px);
-                height: 30px;
-            }
-        }
+        x: 20;
+        y: 20;
+        rx: 6;
+        ry: 6;
     }
 }
 
@@ -126,20 +84,11 @@ header {
 }
 
 @include responsive.respond-to('md') {
-
     header {
         margin-top: 1rem;
         width: calc(100% - 4rem);
         border-radius: 2rem;
         justify-self: anchor-center;
-    }
-
-    .big-header {
-        display: block;
-    }
-
-    .small-header {
-        display: none;
     }
 }
 
@@ -183,16 +132,9 @@ a {
 }
 
 .menu-opened {
-    transform: rotate(45deg);
+    transform: rotate(135deg);
 
-    #c1,
-    #c2,
-    #c3,
-    #c4,
-    #c5,
-    #c6,
-    #c7,
-    #c8 {
+    circle {
         opacity: 0;
     }
 
@@ -234,19 +176,77 @@ a {
     }
 
     #r1 {
-        transform: translateX(-17.5px) translateY(0px);
+        transform: translateX(-16px) translateY(0px);
         width: 40px;
     }
 
     #r2 {
-        transform: translateX(0px) translateY(-17.5px);
+        transform: translateX(0px) translateY(-16px);
         height: 40px;
+    }
+
+    rect {
+        x: 21;
+        y: 21;
+        rx: 3;
+        ry: 3;
     }
 }
 
 .menu-closed {
     transform: rotate(0deg);
 
+    @media (hover: hover) {
+        &:hover {
+
+            #c2,
+            #c4,
+            #c6,
+            #c8 {
+                opacity: 0;
+            }
+
+            #r1,
+            #r2 {
+                opacity: 1;
+            }
+
+            #c2 {
+                transform: translateX(0px) translateY(-24px);
+            }
+
+            #c4 {
+                transform: translateX(24px) translateY(0px);
+            }
+
+            #c6 {
+                transform: translateX(0px) translateY(24px);
+            }
+
+            #c8 {
+                transform: translateX(-24px) translateY(0px);
+            }
+
+            #r1 {
+                transform: translateX(-12px) translateY(0px);
+                width: 30px;
+            }
+
+            #r2 {
+                transform: translateX(0px) translateY(-12px);
+                height: 30px;
+            }
+
+            rect {
+                x: 21;
+                y: 21;
+                rx: 3;
+                ry: 3;
+                width: 6px;
+                height: 6px;
+            }
+        }
+    }
 }
 
 .top-position {

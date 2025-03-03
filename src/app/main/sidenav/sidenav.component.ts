@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent {
   @Output() closeMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() blendMode: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private _Router: Router) {
 
@@ -28,5 +29,13 @@ export class SidenavComponent {
 
   onCloseMenu() {
     this.closeMenu.emit(true);
+  }
+
+  onBlendMode($event: boolean) {
+    if ($event) {
+      this.blendMode.emit(true);
+    } else {
+      this.blendMode.emit(false);
+    }
   }
 }

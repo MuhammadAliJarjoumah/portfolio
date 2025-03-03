@@ -21,6 +21,11 @@ section {
     @include mixins.movingAnimation($animationName:downToTop);
 }
 
+.top-to-down {
+    @include mixins.movingAnimation($animationName:topToDown);
+    
+}
+
 .left-to-right {
     @include mixins.movingAnimation($animationName:rightToLeft);
 }
@@ -52,6 +57,10 @@ section {
 
     @include responsive.responsive('lg') {
         padding-top: 6rem;
+    }
+
+    .box {
+        overflow: hidden;
     }
 }
 

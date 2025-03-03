@@ -18,6 +18,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   isScrolledDown: boolean = false;
   isTopPosition: boolean = true;
   @Output() onTopPosition: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() blendMode: EventEmitter<boolean> = new EventEmitter<boolean>();
   primaryColors = PrimaryColors;
   Theme = Theme;
   @Input() isMenuOpened: boolean = false;
@@ -95,6 +96,17 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   }
 
   onClickHome() {
+    if (this.isMenuOpened) {
+      this.toggleMenu();
+    }
     this._Router.navigate(['/']);
+  }
+
+  onBlendMode($event: boolean) {
+    if ($event) {
+      this.blendMode.emit(true);
+    } else {
+      this.blendMode.emit(false);
+    }
   }
 }
