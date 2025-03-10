@@ -19,6 +19,18 @@ export class SidenavComponent {
     this.onCloseMenu();
   }
 
+  checkScrollingAbility(sectionId: string) {
+    if (this._Router.url === '/') {
+      this.scrollToSection(sectionId);
+    } else {
+      this._Router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.scrollToSection(sectionId);
+        }, 150);
+      });
+    }
+  }
+
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {

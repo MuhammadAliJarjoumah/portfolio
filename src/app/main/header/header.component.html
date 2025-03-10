@@ -1,13 +1,21 @@
 <header [ngClass]="{'header-hidden':isScrolledDown, 'top-position':isTopPosition}" id="top">
     <a (click)="onClickHome()" class="logo" (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
-        <h3>
-            M
-        </h3>
+        <svg viewBox="0 0 500 499" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0 54.9647C0 42.081 17.5384 38.2519 22.9081 49.9634L224.205 488.999C227.849 496.947 222.041 506 213.297 506H12C5.37258 506 0 500.627 0 494V54.9647Z" class="logo-letter" />
+            <path
+                d="M321.413 59.3186C332.126 36.0228 365.235 36.0332 375.934 59.3358L561.48 463.483C570.604 483.356 556.084 506 534.216 506H162.816C140.94 506 126.42 483.341 135.56 463.466L321.413 59.3186Z" class="logo-letter" />
+            <path
+                d="M335.393 228.777C340.742 217.106 357.327 217.111 362.669 228.785L388.281 284.759C392.827 294.694 385.566 306 374.641 306H323.375C312.446 306 305.185 294.686 309.739 284.75L335.393 228.777Z" class="hole" />
+            <path d="M58 389.863C58 385.291 64.432 384.296 65.8131 388.655L103 506H58L58 389.863Z"  class="hole"/>
+
+        </svg>
     </a>
     <div class="small-header" [ngClass]="{'menu-opened': isMenuOpened, 'menu-closed': !isMenuOpened}"
         (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
         <svg (click)="toggleMenu()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="icons-style"
             class="menu-button">
+
             <title>Menu</title>
             <circle cx="12" cy="12" r="4" id="c1"></circle>
             <circle cx="24" cy="12" r="4" id="c2"></circle>

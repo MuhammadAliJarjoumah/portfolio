@@ -30,7 +30,6 @@
     border-radius: 50%;
     border: 2px solid variables.$lilac;
     mix-blend-mode: difference;
-    // transform: scale(4);
 }
 
 #cursor-dot {
@@ -79,6 +78,11 @@
 .sidenav-height {
     height: calc(100vh - 100px);
     top: 100px;
+
+    @include responsive.respond-to('md') {
+        height: calc(100vh - 110px);
+        top: 110px;
+    }
 }
 
 .on-top {
@@ -107,4 +111,8 @@ mat-toolbar {
 .blur-content {
     transition: all ease-in-out .2;
     filter: blur(6px);
+}
+
+mat-sidenav-content {
+    padding: 3rem 2rem 1rem 2rem;
 }

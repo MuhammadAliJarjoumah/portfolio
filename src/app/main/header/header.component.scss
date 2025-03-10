@@ -2,6 +2,29 @@
 @use '../../shared/variables.scss'as variables;
 @use '../../responsive.scss'as responsive;
 
+@mixin header-items-sizing($size: 2.5rem) {
+
+    @include responsive.responsive(xs) {
+        height: $size * responsive.$font-size-scale-xs;
+    }
+
+    @include responsive.responsive(sm) {
+        height: $size * responsive.$font-size-scale-sm;
+    }
+
+    @include responsive.responsive(md) {
+        height: $size * responsive.$font-size-scale-md;
+    }
+
+    @include responsive.responsive(lg) {
+        height: $size * responsive.$font-size-scale-lg;
+    }
+
+    @include responsive.responsive(xl) {
+        height: $size * responsive.$font-size-scale-xl;
+    }
+}
+
 header {
     height: 100px;
     width: 100%;
@@ -16,26 +39,50 @@ header {
     padding: 0 2rem;
     box-sizing: border-box;
     top: 0;
+    min-width: 25rem;
 
     .logo {
-        color: transparent;
-        font-family: "Nova Square", serif;
         text-decoration: none;
-        border: .1rem solid rgba(variables.$lilac, .5);
-        padding: .6rem;
-        border-radius: .4rem;
-        -webkit-text-stroke: 1px variables.$lilac;
-        font-weight: 900;
+        // width: 4.5rem;
+        display: flex;
+        justify-content: flex-start;
+        padding: .2rem;
+
+
+        svg {
+            aspect-ratio: 4 / 3;
+            transition: all ease-in-out .2s;
+
+            .logo-letter {
+                fill: variables.$lilac;
+            }
+
+            .hole {
+                fill: variables.$russian-violet;
+            }
+        }
 
         @media (hover: hover) {
 
-            &:hover {
-                border: .1rem solid variables.$lilac;
-                color: variables.$lilac;
-                font-weight: 700;
+            &:hover svg {
+                transform: scale(1.2);
+                opacity: .7;
             }
         }
+
+        &:active svg {
+            transform: scale(1.1);
+            opacity: .9;
+        }
     }
+}
+
+svg.menu-button {
+    @include header-items-sizing;
+}
+
+.logo>svg {
+    @include header-items-sizing(2.2rem);
 }
 
 .small-header {

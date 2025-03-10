@@ -1,39 +1,68 @@
-<section class="header">
-    <div class="header-content">
+<section class="details-with-image header">
+    <div class="header-content details-side">
         <div>
             <div class="box">
-                <h5 class="name top-to-down">
+                <h5 class="name">
                     Hey, I’m
                 </h5>
             </div>
             <div class="box">
-                <h1 class="header-title top-to-down">
+                <h1 class="header-title">
                     Mohammad Ali Jarjoumah
                 </h1>
             </div>
             <div class="box">
-                <h1 class="header-title top-to-down">
+                <h1 class="header-title">
                     I bring ideas to life online
                 </h1>
             </div>
             <div class="box">
-                <h5 class="header-description top-to-down">
-                    I am a frontend software developer currently I’m focusing on becoming a Full-Stack software
-                    engineer.
-                </h5>
+                <h4 class="header-description">
+                    I am a passionate frontend developer dedicated to crafting seamless web experiences. Join me on my
+                    journey as I transform ideas into reality through innovative solutions.
+                </h4>
             </div>
         </div>
         <div class="buttons">
-            <button color="primary" (click)="onClickLink('/projects')" routerLink="/projects" mat-raised-button>
+            <button color="primary" (click)="onClickLink('/projects')" mat-raised-button>
                 My Projects
             </button>
         </div>
     </div>
+    <div class="image-container">
+        <img src="images/profile-image-2.jpg" alt="Developer" loading="lazy">
+    </div>
 </section>
 <section id="about">
-    <h1>About Me</h1>
+    <div class="about-me-headline">
+        <h5>innovative</h5>
+        <h2>
+            Crafting Exceptional Web Experiences with Expertise
+        </h2>
+    </div>
     <div class="about-me-details">
-        <p class="about-description">Results-driven Angular developer translating complex requirements into efficient
+        <p>
+            With a solid foundation in frontend development, I specialize in creating dynamic and responsive web
+            applications using Angular and TypeScript. My passion for technology drives me to continuously refine my
+            skills and explore new frameworks. I am dedicated to delivering high-quality user experiences that meet the
+            needs of clients and users alike.
+        </p>
+        <div class="buttons">
+            <button color="primary" (click)="onClickLink('/about-me')" mat-raised-button>
+                Learn more
+            </button>
+            <button color="primary" (click)="onClickLink('/contact-me')" mat-raised-button>
+                contact <fa-icon icon="chevron-right"></fa-icon>
+            </button>
+        </div>
+    </div>
+    <div class="about-me-image">
+        <img loading="lazy" src="images/placeholder-image.png" alt="About me image"
+            onerror="this.src='images/placeholder-image.png'">
+    </div>
+    <!-- <h1>About Me</h1>
+    <div class="details-with-image">
+        <p class="details-side">Results-driven Angular developer translating complex requirements into efficient
             code and exceptional user experiences. I thrive on challenging projects, finding innovative solutions to
             optimize performance and deliver impactful results.<br>
             <br>
@@ -51,10 +80,10 @@
             </span>
             page
         </p>
-        <div class="my-image">
-            <img src="images/profile-image.jpg" alt="Developer">
+        <div class="image-container">
+            <img src="images/profile-image-2.jpg" alt="Developer">
         </div>
-    </div>
+    </div> -->
 </section>
 <section id="skillsSection">
     <h1>skills</h1>
@@ -66,7 +95,7 @@
                 <fa-icon
                     [icon]="[(skill.faIcon.iconPrefix ?  skill.faIcon.iconPrefix : 'fas'), skill.faIcon.iconName]"></fa-icon>
                 } @else {
-                <img src="{{skill.svgIcon}}">
+                <img src="{{skill.svgIcon}}" loading="lazy" [alt]="skill.title">
                 }
             </span>
             <div class="skill-details">

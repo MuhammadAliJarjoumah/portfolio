@@ -4,16 +4,18 @@
 @use '../../shared/mixins.scss'as mixins;
 
 section {
-    padding: 2rem;
     max-width: 100rem;
     margin: auto;
+
+    .buttons {
+        display: flex;
+        gap: .5rem;
+    }
 }
 
 .name,
 .header-description {
     margin: 0;
-    color: transparent;
-    -webkit-text-stroke: 1px variables.$lilac;
     font-weight: 900;
 }
 
@@ -21,9 +23,9 @@ section {
     @include mixins.movingAnimation($animationName:downToTop);
 }
 
-.top-to-down {
+.box * {
     @include mixins.movingAnimation($animationName:topToDown);
-    
+
 }
 
 .left-to-right {
@@ -35,10 +37,7 @@ section {
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
 
     .header-content {
         display: grid;
@@ -48,15 +47,10 @@ section {
     .header-title {
         margin: 0;
         overflow: hidden;
-        -webkit-text-stroke: 0;
-    }
-
-    @media (max-width: 386.98px) {
-        padding-top: 6rem;
     }
 
     @include responsive.responsive('lg') {
-        padding-top: 6rem;
+        padding-top: 3rem;
     }
 
     .box {
@@ -64,13 +58,13 @@ section {
     }
 }
 
-.about-me-details {
+.details-with-image {
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
 
-    .my-image {
+    .image-container {
         display: grid;
         width: calc(100% - 1rem - 70%);
         min-width: 20rem;
@@ -92,10 +86,9 @@ section {
                 }
             }
         }
-
     }
 
-    .about-description {
+    .details-side {
         width: 100%;
     }
 
@@ -103,9 +96,53 @@ section {
         justify-content: space-around;
         align-items: center;
 
-        .about-description {
+        .details-side {
             width: 70%;
         }
+    }
+}
+
+#about {
+    display: grid;
+    margin-top: 1rem;
+    gap: 2rem 1rem;
+
+    h5,
+    h2 {
+        margin: 0;
+    }
+
+    @include responsive.respond-to('md') {
+        margin-top: 2rem;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+
+        .about-me-image {
+            grid-column: 1/span 2;
+            grid-row: 2;
+        }
+    }
+}
+
+.about-me-headline {
+    display: grid;
+    row-gap: 1rem;
+}
+
+
+.about-me-details {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.about-me-image {
+    width: 100%;
+
+    img {
+        width: 100%;
+        max-height: 80dvh;
+        object-fit: scale-down;
     }
 }
 

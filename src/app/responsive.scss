@@ -35,25 +35,25 @@ $heading-sizes: (h1: 3.5rem,
 
 @mixin responsive($breakpoint) {
     @if $breakpoint=='xs' {
-        @media (max-width: 575px) {
+        @media (max-width: 575.98px) {
             @content;
         }
     }
 
     @else if $breakpoint=='sm' {
-        @media (min-width: 576px) and (max-width: 767px) {
+        @media (min-width: 576px) and (max-width: 767.98px) {
             @content;
         }
     }
 
     @else if $breakpoint=='md' {
-        @media (min-width: 768px) and (max-width: 991px) {
+        @media (min-width: 768px) and (max-width: 991.98px) {
             @content;
         }
     }
 
     @else if $breakpoint=='lg' {
-        @media (min-width: 992px) and (max-width: 1199px) {
+        @media (min-width: 992px) and (max-width: 1199.98px) {
             @content;
         }
     }
@@ -115,34 +115,7 @@ $size in $heading-sizes {
     button #{$heading},
     button #{$heading} fa-icon,
     button #{$heading} mat-icon {
+        margin: 0;
         @include responsiveFontSize($defaultFontSize:$size);
-    }
-}
-
-svg.menu-button{
-    $size: 2.5rem;
-    @include responsive(xs) {
-        width: $size * $font-size-scale-xs;
-        height: $size * $font-size-scale-xs;
-    }
-
-    @include responsive(sm) {
-        width: $size * $font-size-scale-sm;
-        height: $size * $font-size-scale-sm;
-    }
-
-    @include responsive(md) {
-        width: $size * $font-size-scale-md;
-        height: $size * $font-size-scale-md;
-    }
-
-    @include responsive(lg) {
-        width: $size * $font-size-scale-lg;
-        height: $size * $font-size-scale-lg;
-    }
-
-    @include responsive(xl) {
-        width: $size * $font-size-scale-xl;
-        height: $size * $font-size-scale-xl;
     }
 }

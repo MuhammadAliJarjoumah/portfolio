@@ -3,8 +3,8 @@
         <div class="links" (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
             <button mat-raised-button (click)="onClickLink('/about-me')" >About Me</button>
             <button mat-raised-button
-                (click)="$event.preventDefault(); scrollToSection('skillsSection')">Skills</button>
-            <button mat-raised-button (click)="$event.preventDefault(); scrollToSection('contact')">Contact</button>
+                (click)="$event.preventDefault(); checkScrollingAbility('skillsSection')">Skills</button>
+            <button mat-raised-button (click)="$event.preventDefault(); checkScrollingAbility('contact')">Contact</button>
         </div>
 
     </nav>

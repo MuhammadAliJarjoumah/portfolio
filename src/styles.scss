@@ -54,7 +54,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    font-family: "Source Code Pro", serif !important;
+    font-family: "arima", serif !important;
     color: colors.$lilac;
     transition: all ease-in-out .2s;
     background: colors.$russian-violet;
@@ -85,7 +85,7 @@ body.overflow-hidden {
 .mat-mdc-raised-button:disabled {
     color: colors.$russian-violet !important;
     background-color: colors.$lilac !important;
-    opacity: .6;
+    opacity: .3;
 
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
