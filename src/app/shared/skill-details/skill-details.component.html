@@ -4,8 +4,7 @@
         <fa-icon
             [icon]="[(skill.faIcon.iconPrefix ?  skill.faIcon.iconPrefix : 'fas'), skill.faIcon.iconName]"></fa-icon>
         } @else {
-        <!-- <img src="{{skill.svgIcon}}" loading="lazy" [alt]="skill.title"> -->
-        {{skill.svgIcon}}
+        <img src="{{skill.svgIcon}}" loading="lazy" [alt]="skill.title">
         }
     </span>
     <div class="skill-details">

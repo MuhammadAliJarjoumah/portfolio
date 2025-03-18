@@ -1,6 +1,14 @@
 <mat-card appearance="outlined">
-    <img image-place-holder mat-card-image [mainImageUrl]="project.imageUrl" [alt]="project.title" loading="lazy"
-        class="project-image">
+    <div class="image-container">
+        <img image-place-holder mat-card-image [mainImageUrl]="project.imageUrl" [alt]="project.title" loading="lazy"
+            class="project-image" (click)="onClickLink(project.link)">
+        <div class="project-link">
+            <div class="text">
+                {{project.title}} <fa-icon icon="arrow-up-right-from-square"></fa-icon>
+
+            </div>
+        </div>
+    </div>
     <mat-card-content>
         <h3>
             {{ project.title }}
@@ -12,12 +20,12 @@
             }
         </div>
     </mat-card-content>
-    <mat-card-actions>
+    <!-- <mat-card-actions>
         <button maj-button color="primary" (click)="onClickLink(project.link)">
             <span class="text">Preview</span>
             <div class="icon">
                 <fa-icon icon="arrow-right"></fa-icon>
             </div>
         </button>
-    </mat-card-actions>
+    </mat-card-actions> -->
 </mat-card>
