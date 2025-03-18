@@ -1,0 +1,16 @@
+<div class="skill">
+    <span>
+        @if (skill.faIcon) {
+        <fa-icon
+            [icon]="[(skill.faIcon.iconPrefix ?  skill.faIcon.iconPrefix : 'fas'), skill.faIcon.iconName]"></fa-icon>
+        } @else {
+        <!-- <img src="{{skill.svgIcon}}" loading="lazy" [alt]="skill.title"> -->
+        {{skill.svgIcon}}
+        }
+    </span>
+    <div class="skill-details">
+        <p class="title">{{skill.title}}</p>
+        <!-- <p>{{skill.description}}</p> -->
+        <p class="level">{{skill.level}}</p>
+    </div>
+</div>

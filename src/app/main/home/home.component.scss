@@ -37,7 +37,7 @@ section {
 }
 
 .header {
-    min-height: calc(100vh - 100px);
+    min-height: calc(100dvh - 100px);
 
     .header-content {
         display: grid;
@@ -76,7 +76,7 @@ section {
             border-radius: 50%;
             box-shadow: rgb(9 9 9 / 85%) 20px 18px 10px;
             filter: opacity(0.5);
-            transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .2s;
+            transition: all ease .2s;
             z-index: 0;
 
             @media (hover: hover) {
@@ -179,6 +179,17 @@ section {
             }
         }
     }
+}
+
+#projects {
+    text-align: center;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 section#contact {

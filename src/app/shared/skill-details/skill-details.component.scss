@@ -1,0 +1,24 @@
+.skill {
+    display: grid;
+    grid-template-columns: 3rem auto;
+    row-gap: .5rem;
+    padding: .5rem;
+    align-items: center;
+
+    img {
+        width: 2rem;
+    }
+
+    fa-icon {
+        font-size: 2rem;
+    }
+
+    .skill-details {
+        display: grid;
+        row-gap: .5rem;
+
+        .title {
+            font-weight: 550;
+        }
+    }
+}

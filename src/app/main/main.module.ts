@@ -9,6 +9,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FontAwesomeIconsModule } from '../shared/font-awesome-icons/font-awesome-icons.module';
+import { AboutMeComponent } from './about-me/about-me.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
     ContactFormComponent,
     HeaderComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    AboutMeComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ const routes: Routes = [
     SharedModule,
     FooterComponent,
     ContactFormComponent,
-    SidenavComponent
+    SidenavComponent,
+    AboutMeComponent
   ]
 })
 export class MainModule { }

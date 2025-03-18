@@ -9,7 +9,7 @@ section {
     row-gap: 1rem;
     justify-content: center;
     text-align: center;
-    background-color: variables.$russian-violet;
+    background-color: variables.$black;
 
     h4 {
         margin: 1rem;
@@ -23,7 +23,7 @@ section {
 
     .contact-icon {
         font-size: 1.5rem;
-        transition: all cubic-bezier(0.165, 0.84, 0.44, 1) .2s;
+        transition: all ease .2s;
 
         @media (hover: hover) {
             &:hover {
@@ -38,30 +38,6 @@ section {
         }
     }
 }
-
-// .mail-to {
-//     display: flex;
-//     column-gap: .5rem;
-
-//     a {
-
-//         &:link,
-//         &:visited {
-//             color: variables.$lilac;
-
-//         }
-
-//         @media (hover: hover) {
-//             &:hover {
-//                 opacity: .7;
-//             }
-//         }
-
-//         &:active {
-//             opacity: .85;
-//         }
-//     }
-// }
 
 .author {
     font-size: .8rem;

@@ -2,22 +2,21 @@
     [ngClass]="{'menu-opened': (menuOpened && !isBigHeader), 'menu-closed': (isBigHeader && !menuOpened) }">
     <mat-toolbar color="primary" (closedStart)="menuToggled(false)">
         <div>
-            <app-header [isBigHeader]="isBigHeader" (menuToggled)="sidenav.toggle()" [isMenuOpened]="menuOpened"
+            <app-header [isBigHeader]="isBigHeader" (menuToggled)="menuToggled($event)" [isMenuOpened]="menuOpened"
                 (onTopPosition)="onTopPosition($event)" (blendMode)="blendMode($event)">
             </app-header>
         </div>
     </mat-toolbar>
-    <mat-sidenav-container class="sidenav-container" [hasBackdrop]="false">
-        <mat-sidenav [ngClass]="{'on-top': isOnTop, 'sidenav-height': !isOnTop}" #sidenav mode="over"
-            (openedChange)="menuToggled($event)">
-            <app-sidenav (closeMenu)="menuToggled(!$event); sidenav.toggle()"
-                (blendMode)="blendMode($event)"></app-sidenav>
-        </mat-sidenav>
-        <mat-sidenav-content [ngClass]="{'blur-content': menuOpened}">
+    <main class="main">
+        <div class="header-container" [ngClass]="{'menu-opened': menuOpened, 'menu-closed': !menuOpened,'on-top': isOnTop, 'sidenav-height': !isOnTop }"
+            closeByEscape (escapeAction)="menuToggled(false)">
+            <app-sidenav (closeMenu)="menuToggled(!$event)" (blendMode)="blendMode($event)"></app-sidenav>
+        </div>
+        <div>
             <router-outlet />
             <app-footer></app-footer>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+        </div>
+    </main>
     <div id="cursor-bg"></div>
     <div id="cursor-circle"></div>
     <div id="cursor-dot"></div>

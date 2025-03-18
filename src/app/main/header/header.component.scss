@@ -33,44 +33,36 @@ header {
     justify-content: space-between;
     transition: all 0.3s variables.$transitionVariable;
     position: fixed;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px); //to -
     box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
     z-index: 10;
-    padding: 0 2rem;
+    padding: 0 20px;
     box-sizing: border-box;
     top: 0;
     min-width: 25rem;
 
     .logo {
+        $fillColor: variables.$beige;
         text-decoration: none;
-        // width: 4.5rem;
         display: flex;
         justify-content: flex-start;
         padding: .2rem;
 
 
-        svg {
+        img {
             aspect-ratio: 4 / 3;
-            transition: all ease-in-out .2s;
-
-            .logo-letter {
-                fill: variables.$lilac;
-            }
-
-            .hole {
-                fill: variables.$russian-violet;
-            }
+            transition: all variables.$transitionVariable .2s;
         }
 
         @media (hover: hover) {
 
-            &:hover svg {
+            &:hover img {
                 transform: scale(1.2);
                 opacity: .7;
             }
         }
 
-        &:active svg {
+        &:active img {
             transform: scale(1.1);
             opacity: .9;
         }
@@ -81,7 +73,7 @@ svg.menu-button {
     @include header-items-sizing;
 }
 
-.logo>svg {
+.logo>img {
     @include header-items-sizing(2.2rem);
 }
 
@@ -93,7 +85,7 @@ svg.menu-button {
     transition: all .3s variables.$transitionVariable;
 
     .menu-button {
-        stroke: variables.$lilac;
+        stroke: variables.$beige;
         fill: none;
         stroke-width: 2px;
         cursor: pointer;
@@ -104,9 +96,7 @@ svg.menu-button {
     }
 
     * {
-        // transform-origin: 0px 0px;
-        // transform: none;
-        transition: all ease-in-out .2s;
+        transition: all variables.$transitionVariable .2s;
     }
 
     circle {
@@ -132,10 +122,15 @@ svg.menu-button {
 
 @include responsive.respond-to('md') {
     header {
-        margin-top: 1rem;
-        width: calc(100% - 4rem);
+        margin-top: 10px;
+        width: calc(100% - 40px);
         border-radius: 2rem;
         justify-self: anchor-center;
+    }
+
+    .disable-hide-header {
+        height: 120px;
+        padding: 0 40px;
     }
 }
 
@@ -149,7 +144,7 @@ svg.menu-button {
     a,
     a[type=visited] {
         text-decoration: none;
-        color: variables.$lilac;
+        color: variables.$beige;
         cursor: pointer;
         transition: border-bottom .15s variables.$transitionVariable, opacity .15 variables.$transitionVariable;
         border-bottom: .15rem solid transparent;
@@ -158,12 +153,12 @@ svg.menu-button {
 
         @media (hover: hover) {
             &:hover {
-                border-bottom: .15rem solid variables.$lilac;
+                border-bottom: .15rem solid variables.$beige;
             }
         }
 
         &:active {
-            border-bottom: solid .1rem variables.$lilac;
+            border-bottom: solid .1rem variables.$beige;
             opacity: .8;
         }
     }
@@ -305,4 +300,11 @@ a {
     @include responsive.respond-to('lg') {
         height: 150px;
     }
+}
+
+.disable-hide-header {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
 }

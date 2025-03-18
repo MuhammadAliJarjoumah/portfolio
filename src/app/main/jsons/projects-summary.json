@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Jooler Factory",
+        "subtitle": "E-commerce Platform",
+        "description": "Jooler Factory is a website that sells handmade jewelry. The website is built with Angular. The backend is built with Python and Django. The database is MySQL Server. The website is hosted on Heroku.",
+        "imageUrl": "images/Jooler-Factory.png",
+        "link": "https://factory.jooler.io/",
+        "tags": [
+            "Angular",
+            "TypeScript",
+            "SCSS",
+            "Angular Material",
+            "Responsive Web Design",
+            "UI/UX Design",
+            "State Management",
+            "Component-Based Architecture",
+            "API Integration",
+            "Authentication & Authorization",
+            "Form Handling & Validation",
+            "Reusable UI Components"
+        ]
+    },
+    {
+        "title": "Jooler ERP",
+        "subtitle": "ERP System",
+        "description": "Jooler ERP isa jewelry-focused ERP system designed to streamline inventory, order processing, and financial management. Built with Angular, TypeScript, SCSS, and Angular Material for a seamless UI, it leverages Django (Python) for the backend, MySQL for data management, and is hosted on Heroku. The platform enables efficient handling of custom orders, 3D models, invoices, and consignments, making jewelry business operations more intuitive and scalable.",
+        "imageUrl": "images/Jooler-ERP-App.png",
+        "link": "https://app.jooler.io/",
+        "tags": [
+            "Angular",
+            "TypeScript",
+            "SCSS",
+            "Angular Material",
+            "Dashboard & Data Visualization",
+            "Dynamic Forms & Tables",
+            "Role-Based Access Control (RBAC)",
+            "API Integration & Error Handling",
+            "Performance Optimization",
+            "Lazy Loading",
+            "Custom UI Components",
+            "Modular Code Architecture"
+        ]
+    }
+]

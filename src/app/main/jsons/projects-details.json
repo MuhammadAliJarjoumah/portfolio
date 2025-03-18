@@ -1,0 +1,36 @@
+[
+    {
+        "name": "Jooler Factory",
+        "subtitle": "is an advanced e-commerce platform designed for the jewelry industry, offering a seamless experience for purchasing and managing jewelry-related services. The platform allows users to:",
+        "features": [
+            "Request Renderings and custom jewelry designs.",
+            "Place Custom Orders tailored to specific requirements",
+            "Manage Consignments with ease",
+            "Purchase 3DM Models for jewelry design and modeling.",
+            "Track Financial Documents such as invoices, purchase orders, bills, and quotations."
+        ],
+        "description": "With an intuitive UI built using Angular, TypeScript, SCSS, and Angular Material, the platform ensures a smooth and efficient workflow for both customers and administrators. The backend is built with Python and Django, while the database is MySQL Server. The website is hosted on Heroku.",
+        "mainImage": "jooler-factory.png",
+        "screenshots": [],
+        "projectUrl": "https://factory.jooler.io/"
+    },
+    {
+        "name": "Jooler ERP",
+        "subtitle": "A Comprehensive ERP System Tailored for Jewelry Businesses – Streamlining Orders, Inventory, and Financial Management.",
+        "features": [
+            "Dashboard & Analytics – Provides key insights and metrics for business performance.",
+            "Inventory Management – Tracks jewelry stock, materials, and components in real-time",
+            "Order Management – Handles customer orders, custom requests, and processing workflows.",
+            "Quotation & Pricing System – Generates accurate quotes based on materials and labor costs.",
+            "Invoice & Billing System – Manages financial transactions with detailed invoices and billing records.",
+            "3DM Model Management – Allows users to store, access, and purchase 3D jewelry designs.",
+            "Consignment Tracking – Facilitates seamless handling of consignment-based sales.",
+            "User Roles & Permissions – Implements role-based access control for secure operations.",
+            "Seamless UI/UX – Built with Angular, TypeScript, SCSS, and Angular Material for a modern and efficient interface."
+        ],
+        "description": "app.jooler.io is a jewelry-focused ERP system designed to streamline inventory, order processing, and financial management. Built with Angular, TypeScript, SCSS, and Angular Material for a seamless UI, it leverages Django (Python) for the backend, MySQL for data management, and is hosted on Heroku. The platform enables efficient handling of custom orders, 3D models, invoices, and consignments, making jewelry business operations more intuitive and scalable.",
+        "mainImage": "jooler-erp.png",
+        "screenshots": [],
+        "projectUrl": "https://app.jooler.io/"
+    }
+]

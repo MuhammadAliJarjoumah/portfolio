@@ -3,7 +3,7 @@
 // @use '/theme-colors' as theme;
 // @use '@angular/material'as mat;
 @use 'app/shared/mixins.scss'as mixins;
-@use 'app/shared/variables'as colors;
+@use 'app/shared/variables'as variables;
 @use 'app/responsive'as responsive;
 @use 'app/themes/light-theme.scss';
 @use 'app/themes/dark-theme.scss';
@@ -26,19 +26,12 @@ html {
 .cursor-effect {
     position: absolute;
     width: 20px;
-    /* Adjust as needed */
     height: 20px;
-    /* Adjust as needed */
     background-color: transparent;
-    /* No background color */
     pointer-events: none;
     transform: translate(-50%, -50%);
-    /* Center the effect */
-    box-shadow: 0 4px 8px rgba(colors.$lilac, .5);
-    /* Adjust values for shadow effect */
+    box-shadow: 0 4px 8px rgba(variables.$beige, .5);
     border-radius: 50%;
-    /* optional, if you want a softer shadow */
-    // border:.1rem solid red;
 }
 
 // html.dark-mode {
@@ -55,9 +48,8 @@ body {
     padding: 0;
     box-sizing: content-box;
     font-family: "arima", serif !important;
-    color: colors.$lilac;
-    transition: all ease-in-out .2s;
-    background: colors.$russian-violet;
+    color: variables.$beige;
+    background: variables.$black;
 }
 
 body.overflow-hidden {
@@ -72,8 +64,7 @@ body.overflow-hidden {
 .mat-mdc-raised-button:disabled {
     font-weight: 600;
     border-radius: .5rem;
-    border: .1rem solid colors.$lilac;
-    transition: all .15s cubic-bezier(.4, 0, .2, 1);
+    border: .1rem solid variables.$beige;
     padding: .8rem;
 }
 
@@ -83,8 +74,8 @@ body.overflow-hidden {
 }
 
 .mat-mdc-raised-button:disabled {
-    color: colors.$russian-violet !important;
-    background-color: colors.$lilac !important;
+    color: variables.$black !important;
+    background-color: variables.$beige !important;
     opacity: .3;
 
     &:hover {
@@ -100,7 +91,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: colors.$lilac;
+    background: variables.$beige;
     border-radius: .5rem;
 }
 
@@ -113,7 +104,7 @@ input,
 textarea {
     color: white;
     background-color: transparent;
-    border: .1rem solid colors.$lilac;
+    border: .1rem solid variables.$beige;
     border-radius: .5rem;
     padding: 1rem;
 }
@@ -121,16 +112,118 @@ textarea {
 a,
 a:visited {
     text-decoration: underline;
-    color: colors.$lilac;
-    transition: all ease-in-out .2s;
+    color: variables.$beige;
+    transition: all variables.$transitionVariable .2s;
     cursor: pointer;
 
     @media (hover: hover) {
 
         &:hover {
-            color: #fff;
             text-decoration: none;
             opacity: 1;
         }
+    }
+}
+
+.radius-border {
+    border-radius: 40px;
+}
+
+.custom-button-style-1 {
+    --w: 180px;
+    --h: 45px;
+    --icon-size: 25px;
+    --text-color: rgb(210 210 240);
+    --box-glow-color: transparent;
+    --box-glow-blur: 20px;
+    position: relative;
+    min-width: var(--w);
+    min-height: var(--h);
+    border-radius: var(--h);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-family: "Montserrat";
+    color: var(--text-color);
+    background: rgb(4 8 20 / 0.8);
+    box-shadow: 0 0 0 1px rgb(200 200 220 / 0.22),
+        0 0 var(--box-glow-blur) var(--box-glow-color),
+        inset 0 0 26px -10px var(--box-glow-color);
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 500ms variables.$transitionVariable;
+    z-index: 2;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: variables.$black;
+        box-shadow: inset 0 0px 24px 0 rgb(170 230 250 / 0.12);
+        border-radius: var(--h);
+        z-index: 1;
+        transition: transform .5s variables.$transitionVariable, box-shadow .5s variables.$transitionVariable;
+    }
+
+    .text,
+    .icon {
+        z-index: 2;
+    }
+
+    .text {
+        transform: translateX(-50%);
+        font-family: "Montserrat";
+        transition: transform 500ms variables.$transitionVariable;
+    }
+
+    .icon {
+        position: absolute;
+        width: var(--icon-size);
+        height: var(--icon-size);
+        left: 0;
+        transform: translateX(calc((var(--w)) / 2 + 8px));
+        transition: transform 500ms ease, color 500ms ease;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+    }
+
+    &:active {
+        --box-glow-blur: 36px;
+    }
+
+    &:hover,
+    &:active {
+        --box-glow-color: var(--color);
+    }
+
+    &:hover::before,
+    &:active::before {
+        transform: translateX(65%);
+        box-shadow: inset 0 0px 0px 0 transparent;
+    }
+
+    &:hover .text,
+    &:active .text {
+        transform: translateX(0%);
+        animation-play-state: running;
+    }
+
+    &:hover .icon,
+    &:active .icon {
+        transform: translateX(calc(var(--w) - var(--icon-size) - 19px));
+        color: var(--color);
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:focus-visible:not(:hover, :active) {
+        --box-glow-color: rgb(114 114 114 / 0.5);
     }
 }

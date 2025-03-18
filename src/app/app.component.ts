@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, ElementRef, Inject, inject, OnInit, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, inject, OnInit, PLATFORM_ID, Renderer2, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -124,9 +124,10 @@ export class AppComponent implements OnInit {
       }
     }
   }
-
+  // @HostListener('window:keydown.esc', ['$event'])
   menuToggled($event: boolean) {
     this.menuOpened = $event;
+    console.log(this.menuOpened);
     if (!this.menuOpened)
       document.body.style.overflowY = 'visible';
     else

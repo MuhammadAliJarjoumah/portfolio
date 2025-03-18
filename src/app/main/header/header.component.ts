@@ -1,9 +1,8 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, Component, EventEmitter, HostListener, inject, Inject, Input, OnDestroy, Output, PLATFORM_ID } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, HostListener, inject, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { Theme } from '../../models/theme.model';
 import { PrimaryColors } from '../../shared/primary-colors';
 
@@ -13,10 +12,11 @@ import { PrimaryColors } from '../../shared/primary-colors';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements AfterViewInit, OnDestroy {
+export class HeaderComponent implements AfterViewInit, OnInit, OnDestroy {
   prevScrollPos: number = 0;
   isScrolledDown: boolean = false;
   isTopPosition: boolean = true;
+  disableHideHeader: boolean = false;
   @Output() onTopPosition: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() blendMode: EventEmitter<boolean> = new EventEmitter<boolean>();
   primaryColors = PrimaryColors;
@@ -34,7 +34,7 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
   @Input() isBigHeader: boolean;
   @Output() themeChanged: EventEmitter<Theme> = new EventEmitter<Theme>();
   @Output() menuToggled: EventEmitter<boolean> = new EventEmitter<boolean>();
-  private breakpointObserver = inject(BreakpointObserver); // Inject BreakpointObserver
+  private breakpointObserver = inject(BreakpointObserver);
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private _Router: Router) {
     inject(BreakpointObserver)
@@ -48,20 +48,25 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
 
   }
 
+  ngOnInit() {
+      this.onscroll();
+  }
+
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       this.prevScrollPos = window.scrollY;
     }
-    // this.onTopPosition.emit(this.isTopPosition);
   }
 
   ngOnDestroy() {
     this.destroyed.next();
     this.destroyed.complete();
   }
+
   @HostListener('window:scroll')
   onscroll() {
-    if (isPlatformBrowser(this.platformId)) {
+    if (isPlatformBrowser(this.platformId) && !this.isMenuOpened) {
+      this.disableHideHeader = false;
       const currentScrollPos = window.scrollY;
       if (this.prevScrollPos > currentScrollPos) {
         this.isScrolledDown = false;

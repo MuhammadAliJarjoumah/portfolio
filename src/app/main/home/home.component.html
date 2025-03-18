@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="image-container">
-        <img src="images/profile-image-2.jpg" alt="Developer" loading="lazy">
+        <img class="radius-border" src="images/profile-image-2.jpg" alt="Developer" loading="lazy">
     </div>
 </section>
 <section id="about">
@@ -51,61 +51,34 @@
             <button color="primary" (click)="onClickLink('/about-me')" mat-raised-button>
                 Learn more
             </button>
-            <button color="primary" (click)="onClickLink('/contact-me')" mat-raised-button>
-                contact <fa-icon icon="chevron-right"></fa-icon>
-            </button>
+            <gh-button [button]="{route:'/contact-me', label: 'Contact'}"></gh-button>
         </div>
     </div>
     <div class="about-me-image">
-        <img loading="lazy" src="images/placeholder-image.png" alt="About me image"
+        <img class="radius-border" loading="lazy" src="images/placeholder-image.png" alt="About me image"
             onerror="this.src='images/placeholder-image.png'">
     </div>
-    <!-- <h1>About Me</h1>
-    <div class="details-with-image">
-        <p class="details-side">Results-driven Angular developer translating complex requirements into efficient
-            code and exceptional user experiences. I thrive on challenging projects, finding innovative solutions to
-            optimize performance and deliver impactful results.<br>
-            <br>
-            I'm seeking a challenging and rewarding role where I can contribute to the development of innovative web
-            applications and further enhance my expertise in Angular and related technologies. I'm particularly
-            interested in opportunities to work on full-stack applications using.NET Core and cloud platforms like
-            AWS.<br>
-            <br>
-            I'm committed to staying at the forefront of Angular advancements, including exploring the latest features
-            in Angular 19 and beyond, and I'm also expanding my knowledge of .NET Core and .NET MAUI and
-            ASP.NET.<br><br> I'm eager to
-            contribute to a high-performing team and collaborate on challenging projects that push the boundaries of web
-            development, you can find more details in <span class="link">
-                <a (click)="onClickLink('/about-me')">about me <fa-icon icon="arrow-up-right-from-square"></fa-icon></a>
-            </span>
-            page
-        </p>
-        <div class="image-container">
-            <img src="images/profile-image-2.jpg" alt="Developer">
-        </div>
-    </div> -->
 </section>
 <section id="skillsSection">
-    <h1>skills</h1>
+    <h1>Skills</h1>
     <div class="skills">
         @for (skill of skills; track $index) {
-        <div class="skill">
-            <span>
-                @if (skill.faIcon) {
-                <fa-icon
-                    [icon]="[(skill.faIcon.iconPrefix ?  skill.faIcon.iconPrefix : 'fas'), skill.faIcon.iconName]"></fa-icon>
-                } @else {
-                <img src="{{skill.svgIcon}}" loading="lazy" [alt]="skill.title">
-                }
-            </span>
-            <div class="skill-details">
-                <p class="title">{{skill.title}}</p>
-                <!-- <p>{{skill.description}}</p> -->
-                <p class="level">{{skill.level}}</p>
-            </div>
-        </div>
+        <skill-details [skill]="skill"></skill-details>
         }
     </div>
+</section>
+<section id="projects">
+    <h5>Portfolio</h5>
+    <h1>My Featured Projects</h1>
+    <p>Explore my latest work and innovative solutions.</p>
+    <div class="projects">
+        @for (project of projects; track $index ){
+        <project-card [project]="project">
+
+        </project-card>
+        }
+    </div>
+
 </section>
 
 <section id="contact">
