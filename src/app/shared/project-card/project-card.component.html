@@ -1,7 +1,7 @@
 <mat-card appearance="outlined">
-    <div class="image-container">
+    <div class="image-container" (click)="onClickLink(project.link)">
         <img image-place-holder mat-card-image [mainImageUrl]="project.imageUrl" [alt]="project.title" loading="lazy"
-            class="project-image" (click)="onClickLink(project.link)">
+            class="project-image" >
         <div class="project-link">
             <div class="text">
                 {{project.title}} <fa-icon icon="arrow-up-right-from-square"></fa-icon>

@@ -1,10 +1,15 @@
 <div class="container">
     <nav>
         <div class="links" (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
-            <button mat-raised-button (click)="onClickLink('/about-me')" >About Me</button>
-            <button mat-raised-button
-                (click)="$event.preventDefault(); checkScrollingAbility('skillsSection')">Skills</button>
-            <button mat-raised-button (click)="$event.preventDefault(); checkScrollingAbility('contact')">Contact</button>
+            <div class="box">
+                <button (click)="onClickLink('/about-me')">About Me</button>
+            </div>
+            <div class="box">
+                <button (click)="$event.preventDefault(); checkScrollingAbility('skillsSection')">Skills</button>
+            </div>
+            <div class="box">
+                <button (click)="$event.preventDefault(); checkScrollingAbility('contact')">Contact</button>
+            </div>
         </div>
 
     </nav>
