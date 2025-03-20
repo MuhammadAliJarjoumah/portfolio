@@ -9,11 +9,19 @@ section {
     row-gap: 1rem;
     justify-content: center;
     text-align: center;
-    background-color: variables.$black;
 
     h4 {
         margin: 1rem;
     }
+}
+
+.colored-bg {
+    background-color: variables.$black;
+
+}
+
+.transparent-bg {
+    background-color: transparent;
 }
 
 .contact-me {

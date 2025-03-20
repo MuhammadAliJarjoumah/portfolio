@@ -132,6 +132,8 @@ export class AppComponent implements OnInit {
       document.body.style.overflowY = 'visible';
     else
       document.body.style.overflowY = 'hidden';
+
+    console.log("menuOpened", this.menuOpened)
   }
 
   themeChanged(theme: Theme) {

@@ -8,11 +8,13 @@
         </div>
     </mat-toolbar>
     <main class="main">
-        <div class="header-container" [ngClass]="{'menu-opened': menuOpened, 'menu-closed': !menuOpened,'on-top': isOnTop, 'sidenav-height': !isOnTop }"
+        <div class="header-container"
+            [ngClass]="{'menu-opened': menuOpened, 'menu-closed': !menuOpened,'on-top': isOnTop, 'sidenav-height': !isOnTop }"
             closeByEscape (escapeAction)="menuToggled(false)">
-            <app-sidenav (closeMenu)="menuToggled(!$event)" (blendMode)="blendMode($event)"></app-sidenav>
+            <app-sidenav (closeMenu)="menuToggled(!$event)" (blendMode)="blendMode($event)"
+                [menuOpened]="menuOpened"></app-sidenav>
         </div>
-        <div>
+        <div class="content" [ngClass]="{'blur-content': menuOpened, 'unblur-content': !menuOpened}">
             <router-outlet />
             <app-footer></app-footer>
         </div>

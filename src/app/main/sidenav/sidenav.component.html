@@ -1,4 +1,5 @@
-<div class="container">
+@if(menuOpened){
+<div class="container" [ngClass]="{'hide-items': !menuOpened, 'show-items': menuOpened}">
     <nav>
         <div class="links" (mouseover)="onBlendMode(true)" (mouseout)="onBlendMode(false)">
             <div class="box">
@@ -13,5 +14,8 @@
         </div>
 
     </nav>
-    <app-footer class="footer" [isOnSidebar]="true"></app-footer>
+    <div class="footer-container">
+        <app-footer class="footer" [isOnSidebar]="true"></app-footer>
+    </div>
 </div>
+}

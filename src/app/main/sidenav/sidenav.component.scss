@@ -28,25 +28,18 @@
             row-gap: 1rem;
             padding: 1rem;
             font-size: 1.4rem;
+            width: 100%;
 
             .box {
                 overflow: hidden;
-
-            }
-
-            &:nth-child(2n) {
-                animation-delay: 1s;
             }
 
             button {
-                all: unset;
-                cursor: pointer;
                 position: relative;
                 overflow: hidden;
-                animation-name: scrollDownLinks;
                 animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-                animation-duration: 1.5s;
                 animation-fill-mode: forwards;
+                bottom: -100%;
 
                 @media (hover: hover) {
                     &:hover {
@@ -70,25 +63,93 @@
 
             }
         }
-
     }
 
-    .footer {
+    .footer-container {
         position: fixed;
-        overflow: hidden;
+        left: 0;
         bottom: 0;
         width: 100%;
+
+        .footer {
+            width: 100%;
+            position: fixed;
+        }
+    }
+
+    .box {
+        overflow: hidden;
+    }
+
+    button,
+    .footer {
+        animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1.05);
+        animation-duration: .8s;
+        left: 0;
+        bottom: 0;
     }
 }
 
-@keyframes scrollDownLinks {
+.hide-items {
+    .box {
+        &:first-child button {
+            animation-delay: .3s;
+        }
+
+        &:nth-child(2n) button {
+            animation-delay: .2s;
+        }
+    }
+
+    .box button {
+        animation-name: top-to-bottom;
+    }
+
+    .footer-container .footer {
+        animation-name: top-to-bottom;
+    }
+}
+
+.show-items {
+    .box {
+        &:nth-child(2n) button {
+            animation-delay: .3s;
+        }
+
+        &:nth-child(3n) button {
+            animation-delay: .6s;
+        }
+    }
+
+    .box button {
+        animation-name: bottomToTop;
+    }
+
+    .footer-container .footer {
+        animation-name: bottomToTop;
+    }
+}
+
+@keyframes top-to-bottom {
+    0% {
+        opacity: 1;
+        bottom: 0%;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: -100%;
+    }
+}
+
+@keyframes bottomToTop {
     0% {
         opacity: 0;
-        transform: translateY(-100%);
+        bottom: -100%;
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0%);
+        bottom: 0;
     }
 }

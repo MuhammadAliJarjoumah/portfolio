@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './sidenav.component.scss'
 })
 export class SidenavComponent {
+  @Input({ required: true }) menuOpened: boolean;
   @Output() closeMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() blendMode: EventEmitter<boolean> = new EventEmitter<boolean>();
 

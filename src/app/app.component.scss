@@ -65,9 +65,6 @@
 }
 
 .mat-drawer.mat-drawer-opened {
-    // -webkit-backdrop-filter: blur(35px);
-    // backdrop-filter: blur(35px);
-    // /* box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px; */
     position: fixed;
     width: 100%;
     overflow: hidden;
@@ -103,17 +100,15 @@ mat-toolbar {
 }
 
 .menu-opened {
-    // display: grid;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    background: variables.$black;
     z-index: 1000;
     opacity: 1;
 }
 
 .header-container {
-    transition: all variables.$transitionVariable 1s;
+    width: 100%;
+    left: 0;
+    position: fixed;
+    background: transparent;
 }
 
 .main {
@@ -121,6 +116,33 @@ mat-toolbar {
 }
 
 .menu-closed {
-    display: none;
-    opacity: 0;
+    animation-name: hideMenu;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+}
+
+.content {
+    transition: filter ease 1s;
+}
+
+.blur-content {
+    filter: blur(20px) brightness(40%);
+
+}
+
+.unblur-content {
+    filter: blur(0px);
+}
+
+@keyframes hideMenu {
+    0% {
+        opacity: 1;
+        display: grid;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
 }

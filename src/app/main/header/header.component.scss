@@ -33,7 +33,7 @@ header {
     justify-content: space-between;
     transition: all 0.3s variables.$transitionVariable;
     position: fixed;
-    backdrop-filter: blur(7px); //to -
+    backdrop-filter: blur(7px);
     box-shadow: rgba(0, 0, 2, 0.448) 1px 1px 20px 0px;
     z-index: 10;
     padding: 0 20px;
@@ -303,6 +303,7 @@ a {
 }
 
 .disable-hide-header {
+    backdrop-filter: none;
     box-shadow: none;
     margin: 0;
     width: 100%;

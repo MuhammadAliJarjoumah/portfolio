@@ -1,4 +1,4 @@
-<section>
+<section [ngClass]="{'colored-bg': !isOnSidebar, 'transparent-bg': isOnSidebar}">
     <h4>Get In Touch</h4>
     <div class="contact-me">
         @for ( contact of accounts; track $index){

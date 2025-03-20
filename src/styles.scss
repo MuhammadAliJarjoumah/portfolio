@@ -10,7 +10,6 @@
 @use 'app/themes/custom-themes.scss';
 @use 'app/shared/shimmer-effect.scss';
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 * {
     box-sizing: border-box;
@@ -54,6 +53,15 @@ body {
 
 body.overflow-hidden {
     overflow: hidden;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    color: currentColor;
+    padding: .5rem;
+    font-size: inherit;
+    cursor: pointer;
 }
 
 .mat-mdc-icon-button {

@@ -20,7 +20,6 @@ export class ImagePlaceholderDirective {
   private applyShimmerEffect() {
     const img = this.el.nativeElement as HTMLImageElement;
     this.renderer.addClass(img, 'shimmer'); // Add shimmer class
-    console.log('Shimmer effect applied');
   }
 
   // Set the placeholder while the image loads
@@ -36,7 +35,6 @@ export class ImagePlaceholderDirective {
       const img = this.el.nativeElement as HTMLImageElement;
       this.renderer.removeClass(img, 'shimmer'); // Remove shimmer effect
       this.isLoaded = true; // Mark as loaded
-      console.log('Shimmer effect applied');
       img.src = this.mainImageUrl; // Set the main image
     }
   }
