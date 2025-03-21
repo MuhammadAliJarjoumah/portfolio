@@ -1,0 +1,22 @@
+[
+    {
+        "icon": "graduation-cap",
+        "label": "Education",
+        "description": "Technical License of Informatics: Programming (2020-2021) - Institut Technique Officiel De Tripoli"
+    },
+    {
+        "icon": "book",
+        "label": "Courses",
+        "description": "Full Stack Web Development (2022-2023) – Remote with Coach Rony Rizk"
+    },
+    {
+        "icon": "bullseye",
+        "label": "Career Goals",
+        "description": "Aspiring Senior Angular Developer focused on innovative user experiences."
+    },
+    {
+        "icon": "arrow-up-right-dots",
+        "label": "Growth",
+        "description": "Committed to continuous learning and professional development in technology."
+    }
+]

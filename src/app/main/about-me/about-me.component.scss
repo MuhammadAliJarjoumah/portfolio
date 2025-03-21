@@ -1,9 +1,26 @@
 .header {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
     align-content: center;
-    min-height: calc(100dvh - 110px);
+    min-height: calc(60dvh - 110px);
+
 }
 
-.header-image {
-    width: 15rem;
+#education {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+}
+
+.education-image-container {
+    width: 100%;
+
+    .education-image {
+        width: 100%;
+        min-height: 350px;
+        object-fit: cover;
+        border-radius: 1.5rem;
+    }
 }

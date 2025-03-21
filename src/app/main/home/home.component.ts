@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IProject } from '../../shared/project-card/project-card.component';
 import { ISocialAccount } from '../models/social-account.interface';
 import { MainService } from '../services/main.service';
+import { IProject } from '../../shared/models/project.interface';
 
 @Component({
   selector: 'app-home',

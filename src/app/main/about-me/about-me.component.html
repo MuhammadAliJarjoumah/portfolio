@@ -1,28 +1,74 @@
-<header class="header">
-    <h1>
-        Welcome to My Journey
-    </h1>
-    <h4>
-        As a passionate frontend developer, I specialize in crafting seamless web experiences. My journey is driven by a
-        commitment to innovation and continuous learning in the ever-evolving tech landscape.
-    </h4>
-    <img image-place-holder mat-card-image mainImageUrl="images/ma-dark-1.png" alt="About " loading="lazy"
-        class="header-image">
-</header>
-<section id="education">
-    <h1>
-        My Journey: From Education to Career Aspirations in Tech
-    </h1>
-    <h4>
-        With a solid educational foundation in programming and web development, I am passionate about creating
-        innovative solutions. My goal is to excel as a Senior Angular Developer, continuously enhancing user experiences
-        through cutting-edge technologies.
-    </h4>
+<main>
+    <header class="header">
+        <h2>
+            Welcome to My Journey
+        </h2>
+        <h6>
+            As a passionate frontend developer, I specialize in crafting seamless web experiences. My journey is driven
+            by a
+            commitment to innovation and continuous learning in the ever-evolving tech landscape.
+        </h6>
+    </header>
+    <section id="education">
+        <div>
+            <h2>
+                My Journey: From Education to Career Aspirations in Tech
+            </h2>
+            <h6>
+                With a solid educational foundation in programming and web development, I am passionate about creating
+                innovative solutions. My goal is to excel as a Senior Angular Developer, continuously enhancing user
+                experiences
+                through cutting-edge technologies.
+            </h6>
+        </div>
+        <div class="education-image-container">
+            <img image-place-holder mainImageUrl="images/about-me-education.png" alt="Education " loading="lazy"
+                class="education-image">
+        </div>
+    </section>
+    <section id="journey">
+        <div class="journey-title">
 
-</section>
-<!-- <section id="experience">
+            <div class="box">
+                <h5 class="name">
+                    Journey
+                </h5>
+            </div>
+            <div class="box">
+                <h4>
+                    My Educational and Professional Timeline
+                </h4>
+            </div>
+        </div>
+        <div class="journey-path">
+            <journey-path [journeys]="journeyPaths"></journey-path>
+        </div>
+    </section>
+    <section id="aspirations">
+        <div class="box">
+            <h5 class="name">
+                Aspiration
+            </h5>
+        </div>
+        <div class="box">
+            <h4>
+                My Educational and Professional Timeline
+            </h4>
+        </div>
+        <h6>
+            With a solid educational foundation in programming and web development, I am passionate about creating
+            innovative solutions. My goal is to excel as a Senior Angular Developer, continuously enhancing user
+            experiences
+            through cutting-edge technologies.
+        </h6>
+        <div class="aspirations">
+            <image-layout-one [layoutsData]="aspirations"></image-layout-one>
+        </div>
+    </section>
+    <!-- <section id="experience">
     <h1> 
        Professional Experience
     </h1>
     
 </section>  -->
+</main>

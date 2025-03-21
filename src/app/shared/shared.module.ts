@@ -17,11 +17,15 @@ import { ImagePlaceholderDirective } from './directives/image-place-holder.direc
 import { EscapeListenerDirective } from './directives/escape-listener.directive';
 import { MajButtonDirective } from './maj-button.directive';
 import { GhButtonComponent } from './gh-button/gh-button.component';
+import { JourneyPathComponent } from './journey-path/journey-path.component';
+import { ImageLayoutOneComponent } from './image-layout-one/image-layout-one.component';
 @NgModule({
   declarations: [
     SkillDetailsComponent,
     ProjectCardComponent,
-    GhButtonComponent
+    GhButtonComponent,
+    JourneyPathComponent,
+    ImageLayoutOneComponent
   ],
   imports: [
     CommonModule,
@@ -59,7 +63,9 @@ import { GhButtonComponent } from './gh-button/gh-button.component';
     EscapeListenerDirective,
     MajButtonDirective,
     GhButtonComponent,
-    ImagePlaceholderDirective
+    ImagePlaceholderDirective,
+    JourneyPathComponent,
+    ImageLayoutOneComponent
   ]
 })
 export class SharedModule { }

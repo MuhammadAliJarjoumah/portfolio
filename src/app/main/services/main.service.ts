@@ -3,9 +3,13 @@ import Skills from '../jsons/skills.json';
 import MyAccounts from '../jsons/my-accounts.json';
 import { ISkill } from '../models/skill.interface';
 import { ISocialAccount } from '../models/social-account.interface';
-import { IProject } from '../../shared/project-card/project-card.component';
-import Projects from '../jsons/projects-summary.json'
 
+import Projects from '../jsons/projects-summary.json'
+import JourneyPaths from '../jsons/journey-paths.json'
+import { IProject } from '../../shared/models/project.interface';
+import { IJourneyPath } from '../../shared/models/journey-path.interface';
+import { IImageLayout } from '../../shared/models/image-layout.interface';
+import Aspirations from '../jsons/aspirations.json';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +17,8 @@ export class MainService {
   skills: ISkill[] = Skills;
   myAccounts: ISocialAccount[] = MyAccounts;
   projects: IProject[] = Projects;
-
+  journeyPaths: IJourneyPath[] = JourneyPaths;
+  aspirations: IImageLayout[] = Aspirations
   constructor() { }
 
   getSkills() {
@@ -24,7 +29,15 @@ export class MainService {
     return this.myAccounts;
   }
 
-  getProjects(){
+  getProjects() {
     return this.projects;
+  }
+
+  getJourneyPaths() {
+    return this.journeyPaths;
+  }
+
+  getAspirations() {
+    return this.aspirations
   }
 }

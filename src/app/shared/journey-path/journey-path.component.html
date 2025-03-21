@@ -1,0 +1,19 @@
+@if(journeys){
+<div class="container">
+    @for(journey of journeys ; track $index){
+    <section>
+        <div class="icon-with-line">
+            <fa-icon [icon]="journey.icon"></fa-icon>
+        </div>
+        <div class="details">
+            <label class="label">
+                {{journey.label}}
+            </label>
+            <p class="description">
+                {{journey.description}}
+            </p>
+        </div>
+    </section>
+    }
+</div>
+}

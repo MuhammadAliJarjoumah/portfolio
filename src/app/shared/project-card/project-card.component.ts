@@ -1,12 +1,5 @@
 import { Component, Input } from '@angular/core';
-export interface IProject {
-  title: string;
-  subtitle: string;
-  description: string;
-  imageUrl: string;
-  link: string;
-  tags: string[];
-}
+import { IProject } from '../models/project.interface';
 @Component({
   selector: 'project-card',
   standalone: false,
