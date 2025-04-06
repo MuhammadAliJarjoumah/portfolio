@@ -1,13 +1,21 @@
+@use '../../shared/variables.scss'as variables;
+
+main {
+    display: flex;
+    row-gap: 1rem;
+    flex-direction: column;
+}
+
 .header {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     align-content: center;
     min-height: calc(60dvh - 110px);
-
 }
 
-#education {
+#education,
+#journey {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -21,6 +29,16 @@
         width: 100%;
         min-height: 350px;
         object-fit: cover;
-        border-radius: 1.5rem;
+        border-radius: variables.$imgRadius;
     }
+}
+
+#journey {
+    align-items: flex-start;
+}
+
+#aspirations {
+    display: grid;
+    row-gap: 1rem;
+    text-align: center;
 }

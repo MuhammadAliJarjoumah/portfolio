@@ -1,0 +1,23 @@
+@use '../variables.scss'as variables;
+
+.image {
+    // border-radius: variables.$imgRadius;
+}
+
+.listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+section {
+    display: grid;
+    max-width: 300px;
+
+    img {
+        width: 100%;
+        border-radius: variables.$imgRadius;
+    }
+}

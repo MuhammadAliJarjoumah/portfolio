@@ -1,11 +1,13 @@
-@for (layout of layoutsData;track $index ){
-<section>
-    <img [src]="layout.image" [alt]="layout.heading">
-    <h3>
-        {{layout.heading}}
-    </h3>
-    <p>
-        {{layout.text}}
-    </p>
-</section>
-}
+<div class="listings">
+    @for (layout of layoutsData;track $index ){
+    <section>
+        <img image-place-holder [mainImageUrl]="layout.image" [src]="layout.image" [alt]="layout.heading" class="image">
+        <h3>
+            {{layout.heading}}
+        </h3>
+        <p>
+            {{layout.text}}
+        </p>
+    </section>
+    }
+</div>
