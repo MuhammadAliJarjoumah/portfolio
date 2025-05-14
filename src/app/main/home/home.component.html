@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="buttons">
-            <button color="primary" (click)="onClickLink('/projects')" mat-raised-button>
+            <button color="primary" (click)="scrollToSection('projects')" mat-raised-button>
                 My Projects
             </button>
         </div>
@@ -51,7 +51,7 @@
             <button color="primary" (click)="onClickLink('/about-me')" mat-raised-button>
                 Learn more
             </button>
-            <gh-button [button]="{route:'/contact-me', label: 'Contact'}"></gh-button>
+            <gh-button [button]="{route:'contact-me',section:'contact', label: 'Contact'}"></gh-button>
         </div>
     </div>
     <div class="about-me-image">

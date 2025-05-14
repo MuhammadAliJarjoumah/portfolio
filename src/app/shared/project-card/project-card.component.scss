@@ -12,6 +12,12 @@
             .project-link {
                 opacity: 1;
 
+                .text {
+                    box-shadow: 6px 6px 3rem 2px rgba(0, 0, 0, 0.8);
+                    color: variables.$beige;
+
+                }
+
             }
         }
     }
