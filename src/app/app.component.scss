@@ -41,19 +41,21 @@
     mix-blend-mode: difference;
 }
 
+$scalingSize: 60px;
+
 .scale-default {
-    width: 30px;
-    height: 30px;
+    width: $scalingSize;
+    height: $scalingSize;
 }
 
 .scale-2 {
-    width: calc(20px * 2);
-    height: calc(20px * 2);
+    width: calc($scalingSize * 2);
+    height: calc($scalingSize * 2);
 }
 
 .scale-4 {
-    width: calc(20px * 4);
-    height: calc(20px * 4);
+    width: calc($scalingSize * 4);
+    height: calc($scalingSize * 4);
 }
 
 .hide {
