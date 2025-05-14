@@ -1,9 +1,5 @@
 @use '../variables.scss'as variables;
 
-.image {
-    // border-radius: variables.$imgRadius;
-}
-
 .listings {
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +10,8 @@
 
 section {
     display: grid;
-    max-width: 300px;
+    max-width: 340px;
+    row-gap: .5rem;
 
     img {
         width: 100%;
