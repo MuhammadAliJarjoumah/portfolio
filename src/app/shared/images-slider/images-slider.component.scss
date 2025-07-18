@@ -8,7 +8,7 @@
 //     text-align: center;
 //     justify-content: center;
 //     background-color: colors.$light-cyan;
-//     color: colors.$black;
+//     color: colors.$charcoal;
 //     padding: 3rem 1rem;
 //     overflow: hidden;
 
@@ -54,7 +54,7 @@
 //             .description {
 //                 padding: 1rem 2rem;
 //                 text-align: left;
-//                 border-left: solid colors.$black 0.3rem;
+//                 border-left: solid colors.$charcoal 0.3rem;
 //                 transition: all ease-in-out 0.4s;
 //             }
 
@@ -123,11 +123,11 @@
 
 //             fa-icon {
 //                 font-size: 4rem;
-//                 color: colors.$black;
+//                 color: colors.$charcoal;
 //                 transition: all ease-in-out 0.2s;
 
 //                 &:active {
-//                     color: rgba(colors.$black, 0.8)
+//                     color: rgba(colors.$charcoal, 0.8)
 //                 }
 //             }
 
@@ -138,7 +138,7 @@
 //                     opacity: 0.5;
 
 //                     &:active {
-//                         color: colors.$black
+//                         color: colors.$charcoal
 //                     }
 //                 }
 //             }
@@ -160,16 +160,16 @@
 //                 transition: all ease-in-out 0.2s;
 
 //                 &:hover {
-//                     border-bottom: 0.6rem solid rgba(colors.$black, 0.4);
+//                     border-bottom: 0.6rem solid rgba(colors.$charcoal, 0.4);
 
 //                 }
 //             }
 
 //             .clicked-line {
-//                 border-bottom: 0.6rem solid colors.$black;
+//                 border-bottom: 0.6rem solid colors.$charcoal;
 
 //                 &:hover {
-//                     border-bottom: 0.6rem solid rgba(colors.$black, 1);
+//                     border-bottom: 0.6rem solid rgba(colors.$charcoal, 1);
 
 //                 }
 //             }

@@ -9,6 +9,15 @@
         "level": "Advanced"
     },
     {
+        "svgIcon": null,
+        "faIcon": {
+            "iconName": "react",
+            "iconPrefix": "fab"
+        },
+        "title": "React",
+        "level": "Good understanding"
+    },
+    {
         "title": "TypeScript",
         "level": "Advanced",
         "svgIcon": "svg/typescript.svg",

@@ -29,7 +29,7 @@ html {
     background-color: transparent;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    box-shadow: 0 4px 8px rgba(variables.$beige, .5);
+    box-shadow: 0 4px 8px rgba(variables.$ivoryMist, .5);
     border-radius: 50%;
 }
 
@@ -47,8 +47,9 @@ body {
     padding: 0;
     box-sizing: content-box;
     font-family: "arima", serif !important;
-    color: variables.$beige;
-    background:black;//variables.$black;
+    color: variables.$ivoryMist;
+    background: variables.$charcoal;
+    // cursor: none;
 }
 
 body.overflow-hidden {
@@ -72,7 +73,7 @@ button {
 .mat-mdc-raised-button:disabled {
     font-weight: 600;
     border-radius: .5rem;
-    border: .1rem solid variables.$beige;
+    border: .1rem solid variables.$ivoryMist;
     padding: .8rem;
 }
 
@@ -82,8 +83,8 @@ button {
 }
 
 .mat-mdc-raised-button:disabled {
-    color: variables.$black !important;
-    background-color: variables.$beige !important;
+    color: variables.$charcoal !important;
+    background-color: variables.$ivoryMist !important;
     opacity: .3;
 
     &:hover {
@@ -99,7 +100,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: variables.$beige;
+    background: variables.$ivoryMist;
     border-radius: .5rem;
 }
 
@@ -112,7 +113,7 @@ input,
 textarea {
     color: white;
     background-color: transparent;
-    border: .1rem solid variables.$beige;
+    border: .1rem solid variables.$ivoryMist;
     border-radius: .5rem;
     padding: 1rem;
 }
@@ -120,7 +121,7 @@ textarea {
 a,
 a:visited {
     text-decoration: underline;
-    color: variables.$beige;
+    color: variables.$ivoryMist;
     transition: all variables.$transitionVariable .2s;
     cursor: pointer;
 
@@ -163,7 +164,7 @@ a:visited {
         content: "";
         position: absolute;
         inset: 0;
-        background: black;//variables.$black;
+        background: variables.$charcoal;
         box-shadow: inset 0 0px 24px 0 rgb(170 230 250 / 0.12);
         border-radius: var(--h);
         z-index: 1;

@@ -1,7 +1,7 @@
 <mat-card appearance="outlined">
     <div class="image-container" (click)="onClickLink(project.link)">
         <img image-place-holder mat-card-image [mainImageUrl]="project.imageUrl" [alt]="project.title" loading="lazy"
-            class="project-image" >
+            class="project-image">
         <div class="project-link">
             <div class="text">
                 {{project.title}} <fa-icon icon="arrow-up-right-from-square"></fa-icon>
@@ -13,18 +13,58 @@
             {{ project.title }}
         </h3>
         <p>{{ project.description }}</p>
-        <div class="tags">
-            @for (tag of project.tags; track $index){
-            <mat-chip>{{tag}}</mat-chip>
+        @if(project.skills) {
+        <div class="skills">
+            @if(project.skills.technicalSkills) {
+            <div class="skill">
+                <mat-chip>
+                    <h6><i class="fas fa-code"></i> Technical Skills</h6>
+                </mat-chip>
+                <ul class="tags">
+                    @for (technicalSkill of project.skills.technicalSkills; track $index ; let isLast = $last) {
+                    <i>{{technicalSkill}}{{isLast? '.':','}}</i>
+                    }
+                </ul>
+            </div>
+            }
+            @if(project.skills.hardSkills) {
+            <div class="skill">
+                <mat-chip>
+                    <h6><i class="fas fa-cogs"></i> Hard Skills</h6>
+                </mat-chip>
+                <ul class="tags">
+                    @for (hardSkill of project.skills.hardSkills; track $index ; let isLast = $last) {
+                    <i>{{hardSkill}}{{isLast? '.':','}}</i>
+                    }
+                </ul>
+            </div>
+            }
+            @if(project.skills.developmentPractices) {
+            <div class="skill">
+                <mat-chip>
+                    <h6><i class="fas fa-sitemap"></i> Development Practices</h6>
+                </mat-chip>
+                <ul class="tags">
+                    @for (developmentPractice of project.skills.developmentPractices; track $index; let isLast = $last)
+                    {
+                    <i>{{developmentPractice}}{{isLast? '.':','}}</i>
+                    }
+                </ul>
+            </div>
+            }
+            @if(project.skills.analyticalAndProblemSolving) {
+            <div class="skill">
+                <mat-chip>
+                    <h6><i class="fas fa-brain"></i> Analytical & Problem-Solving</h6>
+                </mat-chip>
+                <ul class="tags">
+                    @for (item of project.skills.analyticalAndProblemSolving; track $index ; let isLast = $last) {
+                    <i>{{item}}{{isLast? '.':','}}</i>
+                    }
+                </ul>
+            </div>
             }
         </div>
+        }
     </mat-card-content>
-    <!-- <mat-card-actions>
-        <button maj-button color="primary" (click)="onClickLink(project.link)">
-            <span class="text">Preview</span>
-            <div class="icon">
-                <fa-icon icon="arrow-right"></fa-icon>
-            </div>
-        </button>
-    </mat-card-actions> -->
 </mat-card>

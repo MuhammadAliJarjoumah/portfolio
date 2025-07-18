@@ -42,7 +42,7 @@ header {
     min-width: 300px;
 
     .logo {
-        $fillColor: variables.$beige;
+        $fillColor: variables.$ivoryMist;
         text-decoration: none;
         display: flex;
         justify-content: flex-start;
@@ -85,7 +85,7 @@ svg.menu-button {
     transition: all .3s variables.$transitionVariable;
 
     .menu-button {
-        stroke: variables.$beige;
+        stroke: variables.$ivoryMist;
         fill: none;
         stroke-width: 2px;
         cursor: pointer;
@@ -144,7 +144,7 @@ svg.menu-button {
     a,
     a[type=visited] {
         text-decoration: none;
-        color: variables.$beige;
+        color: variables.$ivoryMist;
         cursor: pointer;
         transition: border-bottom .15s variables.$transitionVariable, opacity .15 variables.$transitionVariable;
         border-bottom: .15rem solid transparent;
@@ -153,12 +153,12 @@ svg.menu-button {
 
         @media (hover: hover) {
             &:hover {
-                border-bottom: .15rem solid variables.$beige;
+                border-bottom: .15rem solid variables.$ivoryMist;
             }
         }
 
         &:active {
-            border-bottom: solid .1rem variables.$beige;
+            border-bottom: solid .1rem variables.$ivoryMist;
             opacity: .8;
         }
     }

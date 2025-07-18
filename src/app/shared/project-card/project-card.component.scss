@@ -14,7 +14,7 @@
 
                 .text {
                     box-shadow: 6px 6px 3rem 2px rgba(0, 0, 0, 0.8);
-                    color: variables.$beige;
+                    color: variables.$ivoryMist;
 
                 }
 
@@ -36,7 +36,7 @@
     cursor: pointer;
 
     .text {
-        background-color: variables.$black;
+        background-color: variables.$charcoal;
         border-radius: 1rem;
         padding: 1rem;
         font-weight: bold;
@@ -90,13 +90,24 @@
     }
 }
 
+.skills {
+    display: grid;
+    gap: 1rem;
+    padding-top: 1.5rem;
+}
+
 .tags {
     display: flex;
     gap: .5rem;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: .5rem;
-    color: variables.$beige;
+    color: variables.$ivoryMist;
+}
+
+mat-card-content {
+    background: url('/public/images/green-bg.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 mat-card {

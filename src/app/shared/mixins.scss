@@ -66,14 +66,14 @@
 @mixin myBoxShadow {
     font-weight: 600;
     border-radius: .5rem;
-    border: .1rem solid variables.$beige;
+    border: .1rem solid variables.$ivoryMist;
     transition: all .15s ease;
     padding: .8rem;
     cursor: pointer;
 
     @media (hover:hover) {
         &:hover {
-            background-color: black;//variables.$black;
+            background-color: variables.$charcoal;
             box-shadow: 0px 0px 3px 1.5px;
         }
     }
@@ -82,12 +82,12 @@
 
         &,
         &:focus {
-            background-color: black;//variables.$black;
+            background-color: variables.$charcoal;
         }
     }
 
     &:active {
-        background-color: black;//variables.$black;
+        background-color: variables.$charcoal;
         box-shadow: 0px 0px 3px 1.5px;
     }
 }

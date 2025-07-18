@@ -11,6 +11,7 @@ import { MainModule } from './main/main.module';
 import { Theme } from './models/theme.model';
 import { ThemeService } from './services/theme.service';
 import { PrimaryColors } from './shared/primary-colors';
+import { SharedService } from './shared/services/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -29,8 +30,9 @@ export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav!: MatSidenav;
   @ViewChild('sidenav', { read: ElementRef }) sidenavElement!: ElementRef;
   effectElement: HTMLElement;
+  currentCursorType: string = 'auto';
 
-  constructor(library: FaIconLibrary, private _El: ElementRef, private _Renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(library: FaIconLibrary, private _El: ElementRef, private _Renderer: Renderer2, @Inject(PLATFORM_ID) private platformId: Object, public _SharedService: SharedService) {
     library.addIconPacks(fas, far, fab);
   }
 
@@ -50,6 +52,14 @@ export class AppComponent implements OnInit {
     this.blendModeSubject
       .subscribe((event) => this.debouncedBlendMode(event));
   }
+
+  // @HostListener('document:mousemove', ['$event'])
+  // onMouseMove(event: MouseEvent): void {
+  //   const targetElement = event.target as HTMLElement;
+  //   const computedStyle = window.getComputedStyle(targetElement);
+  //   this.currentCursorType = computedStyle.cursor;
+  //   console.log("Cursor Type:", this.currentCursorType);
+  // }
 
   animateCursor(e: MouseEvent, bg: HTMLElement, circle: HTMLElement, dot: HTMLElement) {
     const x = e.pageX;
@@ -127,13 +137,13 @@ export class AppComponent implements OnInit {
   // @HostListener('window:keydown.esc', ['$event'])
   menuToggled($event: boolean) {
     this.menuOpened = $event;
-    console.log(this.menuOpened);
-    if (!this.menuOpened)
+    this.blendMode($event);
+    if (!this.menuOpened) {
       document.body.style.overflowY = 'visible';
-    else
+    }
+    else {
       document.body.style.overflowY = 'hidden';
-
-    console.log("menuOpened", this.menuOpened)
+    }
   }
 
   themeChanged(theme: Theme) {

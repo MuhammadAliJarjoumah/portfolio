@@ -10,7 +10,7 @@
     <main class="main">
         <div class="header-container"
             [ngClass]="{'menu-opened': menuOpened, 'menu-closed': !menuOpened,'on-top': isOnTop, 'sidenav-height': !isOnTop }"
-            closeByEscape (escapeAction)="menuToggled(false)">
+            closeByEscape (escapeAction)="menuOpened? menuToggled(false): null">
             <app-sidenav (closeMenu)="menuToggled(!$event)" (blendMode)="blendMode($event)"
                 [menuOpened]="menuOpened"></app-sidenav>
         </div>
